@@ -1,0 +1,661 @@
+/* ============================================================
+   THEME
+   Four hue families, each with bright/mid/dim.
+   Assign a family per content area — never mix within a family.
+   ============================================================ */
+:root {
+  /* Canvas — warm charcoal, never pure black */
+  --bg: #1b1a19;
+  --surface: #232221;
+  --surface-raised: #2d2c2a;
+  --border: #383634;
+  --border-strong: #484542;
+
+  /* Text — warm off-white */
+  --fg: #f4f2f0;
+  --fg-soft: #d7d3cf;
+  --muted: #a9a7a4;
+  --faint: #6f6d6a;
+
+  /* Family 1 — blue. Simulation, the Life canvas. */
+  --sim1-bright: #5b9cf5;
+  --sim1-mid:    #3a7bd5;
+  --sim1-dim:    #2a5a9e;
+
+  /* Family 2 — amber. Events, dates, logistics. */
+  --sim2-bright: #f5a05b;
+  --sim2-mid:    #d47e3a;
+  --sim2-dim:    #9e5d2a;
+
+  /* Family 3 — green. Techniques, what we work on. */
+  --sim3-bright: #6ee7a8;
+  --sim3-mid:    #3fb87a;
+  --sim3-dim:    #2a8a5a;
+
+  /* Family 4 — violet. The club's voice: CTAs, eyebrows. */
+  --sim4-bright: #c48af5;
+  --sim4-mid:    #9a5fd4;
+  --sim4-dim:    #703fa0;
+
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --maxw: 960px;
+  --radius: 4px;
+
+  /* Lattice — faint lines on charcoal.
+     --grid is read by script.js and painted onto the canvas, so keep the name. */
+  --grid: rgba(255, 255, 255, 0.045);
+  --lattice: rgba(255, 255, 255, 0.032);
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* The lattice — fixed to the viewport, fading out toward the edges */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--lattice) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--lattice) 1px, transparent 1px);
+  background-size: 34px 34px;
+  -webkit-mask-image: radial-gradient(120% 90% at 50% 0%, #000 0%, #000 34%, transparent 78%);
+          mask-image: radial-gradient(120% 90% at 50% 0%, #000 0%, #000 34%, transparent 78%);
+}
+
+/* Two soft family-tinted glows behind everything */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(55ch 38ch at 6% -8%, rgba(196, 138, 245, 0.10), transparent 70%),
+    radial-gradient(48ch 34ch at 94% 0%, rgba(91, 156, 245, 0.075), transparent 70%);
+}
+
+::selection {
+  background: rgba(196, 138, 245, 0.30);
+  color: var(--fg);
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ============================================================
+   HEADER + NAV
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(27, 26, 25, 0.82);
+  backdrop-filter: saturate(150%) blur(12px);
+  -webkit-backdrop-filter: saturate(150%) blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Hairline of colour along the bottom edge */
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(196, 138, 245, 0.40) 25%,
+    rgba(91, 156, 245, 0.30) 65%,
+    transparent);
+  opacity: 0.55;
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: var(--fg);
+}
+.brand span { color: var(--sim4-bright); }
+.brand:hover { color: #fff; }
+
+.site-nav { flex: 1 1 auto; }
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.25rem 0;
+  transition: color 0.18s var(--ease);
+}
+
+/* Animated underline instead of a static border */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--sim4-bright);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.22s var(--ease);
+}
+
+.nav a:hover { color: var(--fg); }
+.nav a:hover::after { transform: scaleX(1); }
+
+.nav a[aria-current="page"] { color: var(--fg); }
+.nav a[aria-current="page"]::after { transform: scaleX(1); }
+
+/* Hamburger — only rendered when JS is present AND viewport is narrow */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.18s var(--ease);
+}
+.nav-toggle:hover { background: var(--surface-raised); }
+
+.nav-toggle .bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--fg);
+  transition: transform 0.18s var(--ease), opacity 0.18s var(--ease);
+}
+.nav-toggle[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ============================================================
+   MAIN
+   ============================================================ */
+main { padding: 0 0 5rem; }
+
+h1 {
+  font-size: clamp(2rem, 5.5vw, 3.35rem);
+  font-weight: 700;
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  margin: 0 0 1.35rem;
+}
+
+h2 {
+  font-size: 1.42rem;
+  font-weight: 700;
+  letter-spacing: -0.018em;
+  text-wrap: balance;
+  margin: 3.25rem 0 0.9rem;
+}
+
+h3 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.45rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--faint);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.18s var(--ease), color 0.18s var(--ease);
+}
+a:hover { text-decoration-color: var(--sim4-bright); }
+
+.lede {
+  font-size: 1.18rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--fg-soft);
+  max-width: 48ch;
+  margin-bottom: 1.75rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent, var(--border) 12%, var(--border) 88%, transparent);
+  margin: 3.25rem 0;
+}
+
+/* Monospace eyebrow — the club's voice in violet */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sim4-bright);
+  margin: 0 0 1.15rem;
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  margin-right: 0.65rem;
+  vertical-align: middle;
+  background: currentColor;
+  opacity: 0.55;
+}
+
+/* Keyboard focus — visible, but never for mouse clicks */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--sim4-bright);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+/* ============================================================
+   HERO — single column on every viewport
+   ============================================================ */
+.hero {
+  display: grid;
+  gap: 3rem;
+  padding: 4rem 0 1.5rem;
+}
+
+.hero-text { max-width: 62ch; }
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.1rem;
+}
+
+/* ============================================================
+   BUTTONS — ghost by default, one filled accent
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  padding: 0.72rem 1.4rem;
+  border: 1px solid var(--fg);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+  transition: background 0.18s var(--ease), color 0.18s var(--ease),
+              border-color 0.18s var(--ease), transform 0.18s var(--ease),
+              box-shadow 0.18s var(--ease);
+}
+.btn:hover {
+  background: var(--fg);
+  color: var(--bg);
+  text-decoration: none;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn.secondary {
+  border-color: var(--border-strong);
+  color: var(--muted);
+}
+.btn.secondary:hover {
+  border-color: var(--muted);
+  color: var(--fg);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.btn.accent {
+  background: var(--sim4-bright);
+  border-color: var(--sim4-bright);
+  color: #1a1918;
+  box-shadow: 0 10px 26px -14px rgba(196, 138, 245, 0.85);
+}
+.btn.accent:hover {
+  background: var(--sim4-mid);
+  border-color: var(--sim4-mid);
+  color: #121110;
+  box-shadow: 0 14px 30px -14px rgba(196, 138, 245, 0.95);
+}
+
+/* ============================================================
+   SIMULATION PANEL
+   ============================================================ */
+.hero-sim {
+  position: relative;
+  background: linear-gradient(180deg, var(--surface-raised), var(--surface));
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem;
+  box-shadow:
+    0 30px 70px -40px rgba(0, 0, 0, 0.95),
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+}
+
+/* Blue accent bar along the top of the panel */
+.hero-sim::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 2px;
+  border-radius: 6px 6px 0 0;
+  background: linear-gradient(90deg,
+    var(--sim1-bright), var(--sim1-dim) 55%, transparent);
+  opacity: 0.85;
+}
+
+.hero-sim canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: #191817;
+  cursor: crosshair;
+  touch-action: manipulation;
+}
+
+.sim-caption {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0.75rem 0 0.1rem;
+}
+.sim-caption strong {
+  color: var(--sim1-bright);
+  font-weight: 500;
+}
+
+/* ============================================================
+   CARDS — one hue family per card
+   ============================================================ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.9rem;
+  margin: 1.5rem 0;
+}
+
+.card {
+  --card-glow: transparent;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--surface-raised), var(--surface) 70%);
+  border: 1px solid var(--border);
+  border-left-width: 3px;
+  border-radius: var(--radius);
+  padding: 1.15rem 1.25rem;
+  transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+}
+
+/* A whisper of the family colour bleeding in from the corner */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(130% 90% at 0% 0%, var(--card-glow), transparent 62%);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 45px -30px rgba(0, 0, 0, 0.95);
+}
+
+.card p {
+  margin-bottom: 0;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.card p strong { color: var(--fg); font-weight: 600; }
+
+.card--sim1 { border-left-color: var(--sim1-bright); --card-glow: rgba(91, 156, 245, 0.10); }
+.card--sim1 h3 { color: var(--sim1-bright); }
+
+.card--sim2 { border-left-color: var(--sim2-bright); --card-glow: rgba(245, 160, 91, 0.10); }
+.card--sim2 h3 { color: var(--sim2-bright); }
+
+.card--sim3 { border-left-color: var(--sim3-bright); --card-glow: rgba(110, 231, 168, 0.10); }
+.card--sim3 h3 { color: var(--sim3-bright); }
+
+.card--sim4 { border-left-color: var(--sim4-bright); --card-glow: rgba(196, 138, 245, 0.10); }
+.card--sim4 h3 { color: var(--sim4-bright); }
+
+/* ============================================================
+   EVENTS — always amber
+   ============================================================ */
+.event {
+  position: relative;
+  border-left: 3px solid var(--sim2-bright);
+  padding: 0.15rem 0 0.15rem 1.15rem;
+  margin-bottom: 1.9rem;
+}
+.event::before {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--sim2-bright);
+  filter: blur(5px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+.event h3 { color: var(--sim2-bright); }
+.event p:last-child { margin-bottom: 0; }
+
+/* ============================================================
+   FORMS
+   ============================================================ */
+.form {
+  display: grid;
+  gap: 1.1rem;
+  margin-top: 1.75rem;
+  max-width: 34rem;
+}
+
+.field { display: grid; gap: 0.4rem; }
+
+label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+}
+
+input, select, textarea {
+  font: inherit;
+  font-size: 0.96rem;
+  color: var(--fg);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 0.68rem 0.78rem;
+  width: 100%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
+  transition: border-color 0.18s var(--ease), box-shadow 0.18s var(--ease),
+              background 0.18s var(--ease);
+}
+textarea { resize: vertical; min-height: 110px; }
+
+input::placeholder, textarea::placeholder { color: var(--faint); }
+
+input:hover, select:hover, textarea:hover { border-color: var(--muted); }
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  background: var(--surface-raised);
+  border-color: var(--sim4-bright);
+  box-shadow: 0 0 0 3px rgba(196, 138, 245, 0.16);
+}
+
+.form .btn { justify-self: start; margin-top: 0.35rem; }
+
+/* Honeypot */
+.hidden { position: absolute; left: -9999px; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.6rem 0;
+  color: var(--faint);
+  font-size: 0.86rem;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.18));
+}
+.site-footer a {
+  color: var(--faint);
+  text-decoration-color: transparent;
+}
+.site-footer a:hover {
+  color: var(--muted);
+  text-decoration-color: var(--faint);
+}
+.site-footer p { margin: 0; }
+
+/* ============================================================
+   BREAKPOINTS — two, only where fluid can't express the change
+   ============================================================ */
+
+/* Narrow: collapse nav into hamburger. JS-gated so no-JS still gets a nav. */
+@media (max-width: 620px) {
+  .js .nav-toggle { display: flex; }
+
+  .js .site-nav {
+    display: none;
+    width: 100%;
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .js .site-nav.is-open {
+    display: block;
+    animation: navIn 0.18s var(--ease) both;
+  }
+
+  @keyframes navIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .js .site-nav .nav {
+    flex-direction: column;
+    gap: 0;
+    padding-top: 0.35rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .js .site-nav .nav li + li { border-top: 1px solid var(--border); }
+
+  .js .site-nav .nav a {
+    display: block;
+    padding: 0.8rem 0.15rem;
+    border-bottom: 0;
+    border-radius: var(--radius);
+  }
+
+  /* The sliding underline doesn't suit a stacked list */
+  .js .site-nav .nav a::after { display: none; }
+  .js .site-nav .nav a:hover { color: var(--fg); padding-left: 0.35rem; }
+  .js .site-nav .nav a[aria-current="page"] { color: var(--sim4-bright); }
+
+  .hero { padding-top: 3rem; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

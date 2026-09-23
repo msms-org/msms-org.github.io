@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join — M&amp;S Club</title>
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<script src="script.js"></script>
+  <body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">M<span>&amp;</span>S Club</a>
+
+    <button class="nav-toggle" type="button"
+            aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav">
+      <ul class="nav">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<main class="wrap">
+  <h1>Join the club</h1>
+  <p class="lede">
+    Fill this in and we'll add you to the mailing list. No commitment —
+    come to as many or as few meetings as you like.
+  </p>
+
+  <!-- Replace YOUR_FORM_ID below. See setup notes. -->
+  <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+    <div class="field">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required autocomplete="name">
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required autocomplete="email">
+    </div>
+
+    <div class="field">
+      <label for="year">Year</label>
+      <select id="year" name="year">
+        <option value="">Select…</option>
+        <option>Freshman</option>
+        <option>Sophomore</option>
+        <option>Junior</option>
+        <option>Senior</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="experience">Programming experience</label>
+      <select id="experience" name="experience">
+        <option value="">Select…</option>
+        <option>None yet</option>
+        <option>A little</option>
+        <option>Comfortable</option>
+        <option>Very comfortable</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="interests">What are you curious about? <span class="muted">(optional)</span></label>
+      <textarea id="interests" name="interests"
+        placeholder="Epidemics, traffic, ecosystems, physics engines, board game AI…"></textarea>
+    </div>
+
+    <!-- Honeypot: real people never see this. Bots fill it in. -->
+    <div class="hidden">
+      <label for="_gotcha">Leave this empty</label>
+      <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+    </div>
+
+    <button type="submit">Sign me up</button>
+  </form>
+
+  <hr>
+
+  <h2>Prefer email?</h2>
+  <p>
+    Write to <a href="mailto:ms-club@school.edu">ms-club@school.edu</a> and
+    we'll add you manually. Or just show up on Wednesday — that works too.
+  </p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 M&amp;S Club · <a href="mailto:ms-club@school.edu">ms-club@school.edu</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

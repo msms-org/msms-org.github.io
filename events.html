@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events — M&amp;S Club</title>
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<script src="script.js"></script>
+  <body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">M<span>&amp;</span>S Club</a>
+
+    <button class="nav-toggle" type="button"
+            aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav">
+      <ul class="nav">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<main class="wrap">
+  <h1>Upcoming sessions</h1>
+  <p class="lede">Wednesdays, 3:30–5:00 PM, Room 214 — unless noted otherwise.</p>
+
+  <!-- ============================================================
+       TO ADD AN EVENT: copy one <div class="event"> block, paste it
+       where it belongs, and edit the text. That's the whole process.
+       ============================================================ -->
+
+  <div class="event">
+    <h3>SIR epidemic model in Python</h3>
+    <p class="muted">Wednesday, Oct 8</p>
+    <p>Build a compartmental model from scratch. Vary R₀ and watch the
+       outbreak curve change shape.</p>
+  </div>
+
+  <div class="event">
+    <h3>Monte Carlo: estimating π and beyond</h3>
+    <p class="muted">Wednesday, Oct 15</p>
+    <p>Random numbers as a computational tool. We'll start with a dartboard
+       and end with a problem that has no closed form.</p>
+  </div>
+
+  <div class="event">
+    <h3>Traffic flow with cellular automata</h3>
+    <p class="muted">Wednesday, Oct 22</p>
+    <p>The Nagel–Schreckenberg model. Why does a jam appear out of nowhere
+       on an empty road?</p>
+  </div>
+
+  <div class="event">
+    <h3>Project night — bring your own model</h3>
+    <p class="muted">Wednesday, Oct 29</p>
+    <p>No agenda. Work on whatever you're building, ask for help, or pair up
+       with someone else.</p>
+  </div>
+
+  <hr>
+
+  <h2>Past sessions</h2>
+  <div class="event">
+    <h3>Intro to simulation + setup night</h3>
+    <p class="muted">Wednesday, Oct 1</p>
+    <p>Got Python running, wrote a random walk, argued about seed values.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 M&amp;S Club · <a href="mailto:ms-club@school.edu">ms-club@school.edu</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
