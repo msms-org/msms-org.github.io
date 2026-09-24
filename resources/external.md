@@ -53,4 +53,4 @@ better at it is to read widely.
 
 ## Next
 
-Back to [Resources](/resources/).
+Back to [Resources]({{ '/resources/' | relative_url }}).

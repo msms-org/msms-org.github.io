@@ -51,4 +51,4 @@ when a project calls for them.
 
 ## Next
 
-Back to [Resources](/resources/).
+Back to [Resources]({{ '/resources/' | relative_url }}).

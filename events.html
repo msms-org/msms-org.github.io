@@ -1,155 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Events — MSMS</title>
-<meta name="description" content="Upcoming and past sessions from the Maliyadeva Simulation and Modelling Society.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script>document.documentElement.classList.add('js');</script>
-</head>
-<body>
+---
+title: Events
+description: Upcoming and past sessions from the Maliyadeva Simulation and Modelling Society.
+---
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="index.html">MSMS</a>
+<div class="wrap">
 
-    <button class="nav-toggle" type="button"
-            aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Maliyadeva Simulation &amp; Modelling Society</p>
+      <h1>Events</h1>
+      <p class="lede">
+        Sessions are announced as they're scheduled. All meetings are open
+        to any enrolled student.
+      </p>
+    </div>
+  </section>
 
-    <nav class="site-nav" id="site-nav">
-      <ul class="nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="events.html" aria-current="page">Events</a></li>
-        <li><a href="join.html">Join</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <!-- ============================================================
+       TO ADD AN EVENT:
+       - The FIRST one on this list is the featured "next session"
+         and lives outside the .event-list wrapper as
+         <article class="event event--featured">.
+       - Everything else sits inside <div class="event-list">.
+       - When the featured one passes, move it into Past, remove its
+         `event--featured` class, and promote the next one.
+       ============================================================ -->
 
-<main>
-  <div class="wrap">
+  <section class="panel panel--sim2">
+    <h2>Upcoming</h2>
 
-    <section class="hero">
-      <div class="hero-text">
-        <p class="eyebrow">Maliyadeva Simulation &amp; Modelling Society</p>
-        <h1>Events</h1>
-        <p class="lede">
-          Sessions are announced as they're scheduled. All meetings are open
-          to any enrolled student.
-        </p>
+    <article class="event event--featured">
+      <time class="event-date" datetime="2026-10-08">
+        <span class="event-day">8</span>
+        <span class="event-month">Oct</span>
+      </time>
+      <div class="event-body">
+        <p class="event-kicker">Next session</p>
+        <h3>SIR epidemic model in Python</h3>
+        <p>Build a compartmental model from scratch. Vary R₀ and watch
+           the outbreak curve change shape.</p>
+        <p class="event-meta">Wednesday · 3:30–5:00 PM · Room 214 · Workshop</p>
+        <p class="event-notes">Bring a laptop if you have one — we have spares.</p>
       </div>
-    </section>
+    </article>
 
-    <!-- ============================================================
-         TO ADD AN EVENT:
-         - The FIRST one on this list is the featured "next session"
-           and lives outside the .event-list wrapper as
-           <article class="event event--featured">.
-         - Everything else sits inside <div class="event-list">.
-         - When the featured one passes, move it into Past, remove its
-           `event--featured` class, and promote the next one.
-         ============================================================ -->
+    <div class="event-list">
 
-    <section class="panel panel--sim2">
-      <h2>Upcoming</h2>
-
-      <article class="event event--featured">
-        <time class="event-date" datetime="2026-10-08">
-          <span class="event-day">8</span>
+      <article class="event">
+        <time class="event-date" datetime="2026-10-15">
+          <span class="event-day">15</span>
           <span class="event-month">Oct</span>
         </time>
         <div class="event-body">
-          <p class="event-kicker">Next session</p>
-          <h3>SIR epidemic model in Python</h3>
-          <p>Build a compartmental model from scratch. Vary R₀ and watch
-             the outbreak curve change shape.</p>
+          <h3>Monte Carlo: estimating π and beyond</h3>
+          <p>Random numbers as a computational tool. We'll start with a
+             dartboard and end with a problem that has no closed form.</p>
           <p class="event-meta">Wednesday · 3:30–5:00 PM · Room 214 · Workshop</p>
-          <p class="event-notes">Bring a laptop if you have one — we have spares.</p>
         </div>
       </article>
 
-      <div class="event-list">
+      <article class="event">
+        <time class="event-date" datetime="2026-10-22">
+          <span class="event-day">22</span>
+          <span class="event-month">Oct</span>
+        </time>
+        <div class="event-body">
+          <h3>Traffic flow with cellular automata</h3>
+          <p>The Nagel–Schreckenberg model. Why does a jam appear out of
+             nowhere on an empty road?</p>
+          <p class="event-meta">Wednesday · 3:30–5:00 PM · Room 214 · Workshop</p>
+        </div>
+      </article>
 
-        <article class="event">
-          <time class="event-date" datetime="2026-10-15">
-            <span class="event-day">15</span>
-            <span class="event-month">Oct</span>
-          </time>
-          <div class="event-body">
-            <h3>Monte Carlo: estimating π and beyond</h3>
-            <p>Random numbers as a computational tool. We'll start with a
-               dartboard and end with a problem that has no closed form.</p>
-            <p class="event-meta">Wednesday · 3:30–5:00 PM · Room 214 · Workshop</p>
-          </div>
-        </article>
+      <article class="event">
+        <time class="event-date" datetime="2026-10-29">
+          <span class="event-day">29</span>
+          <span class="event-month">Oct</span>
+        </time>
+        <div class="event-body">
+          <h3>Project night — bring your own model</h3>
+          <p>No agenda. Work on whatever you're building, ask for help, or
+             pair up with someone else.</p>
+          <p class="event-meta">Wednesday · 3:30–5:00 PM · Room 214 · Open session</p>
+        </div>
+      </article>
 
-        <article class="event">
-          <time class="event-date" datetime="2026-10-22">
-            <span class="event-day">22</span>
-            <span class="event-month">Oct</span>
-          </time>
-          <div class="event-body">
-            <h3>Traffic flow with cellular automata</h3>
-            <p>The Nagel–Schreckenberg model. Why does a jam appear out of
-               nowhere on an empty road?</p>
-            <p class="event-meta">Wednesday · 3:30–5:00 PM · Room 214 · Workshop</p>
-          </div>
-        </article>
+    </div>
+  </section>
 
-        <article class="event">
-          <time class="event-date" datetime="2026-10-29">
-            <span class="event-day">29</span>
-            <span class="event-month">Oct</span>
-          </time>
-          <div class="event-body">
-            <h3>Project night — bring your own model</h3>
-            <p>No agenda. Work on whatever you're building, ask for help, or
-               pair up with someone else.</p>
-            <p class="event-meta">Wednesday · 3:30–5:00 PM · Room 214 · Open session</p>
-          </div>
-        </article>
+  <section class="panel panel--past">
+    <h2>Past sessions</h2>
 
-      </div>
-    </section>
+    <div class="event-list">
 
-    <section class="panel panel--past">
-      <h2>Past sessions</h2>
+      <article class="event event--past">
+        <time class="event-date" datetime="2026-10-01">
+          <span class="event-day">1</span>
+          <span class="event-month">Oct</span>
+        </time>
+        <div class="event-body">
+          <h3>Intro to simulation + setup night</h3>
+          <p>Got Python running, wrote a random walk, argued about seed
+             values.</p>
+        </div>
+      </article>
 
-      <div class="event-list">
+    </div>
+  </section>
 
-        <article class="event event--past">
-          <time class="event-date" datetime="2026-10-01">
-            <span class="event-day">1</span>
-            <span class="event-month">Oct</span>
-          </time>
-          <div class="event-body">
-            <h3>Intro to simulation + setup night</h3>
-            <p>Got Python running, wrote a random walk, argued about seed
-               values.</p>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-  </div>
-</main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <p>© 2026 MSMS · <a href="mailto:felixx.a.wayne32@gmail.com">felixx.a.wayne32@gmail.com</a></p>
-  </div>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+</div>

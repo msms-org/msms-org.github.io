@@ -1,125 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M&amp;S Club — Modelling &amp; Simulation</title>
-<meta name="description" content="A student club for building models of systems too big, too slow, or too dangerous to experiment on.">
-<!-- Flag JS availability before the body renders, so the collapsed nav
-     never flashes. Without JS, the nav stays plainly visible. -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-    <script>document.documentElement.classList.add('js');</script>
-</head>
-<body>
+---
+description: A student society at Maliyadeva College for building models of systems too big, too slow, or too dangerous to experiment on.
+---
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="index.html">M<span>&amp;</span>S Club</a>
+<div class="wrap">
 
-    <button class="nav-toggle" type="button"
-            aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Maliyadeva Simulation &amp; Modelling Society</p>
+      <h1>Some systems are too big, too slow, or too dangerous to experiment on. So we build them instead.</h1>
+      <p class="lede">
+        Why does a traffic jam appear on an empty road? How fast does a rumour
+        actually spread? What happens to a forest if you remove one species?
+        You can't run those experiments in real life. You can run them in code.
+      </p>
+      <div class="cta">
+        <a class="btn accent" href="{{ '/join.html' | relative_url }}">Join the club</a>
+        <a class="btn secondary" href="{{ '/events.html' | relative_url }}">See upcoming sessions</a>
+      </div>
+    </div>
 
-    <nav class="site-nav" id="site-nav">
-      <ul class="nav">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="join.html">Join</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    <div class="hero-sim">
+      <canvas id="life" role="img"
+        aria-label="A live Conway's Game of Life simulation running on a grid."></canvas>
+      <p class="sim-caption">
+        <strong>Conway's Game of Life</strong> — running right now. Click the grid to draw.
+      </p>
+    </div>
+  </section>
 
-<main>
-  <div class="wrap">
+  <section class="panel panel--sim4">
+    <h2>Questions we chase</h2>
+    <div class="cards">
+      <div class="card card--sim1">
+        <h3>Where do traffic jams come from?</h3>
+        <p>Not from crashes or bottlenecks — a jam can appear spontaneously
+           on an empty road. <strong>Nagel–Schreckenberg
+           cellular automaton.</strong></p>
+      </div>
+      <div class="card card--sim2">
+        <h3>How does an outbreak take off?</h3>
+        <p>Three compartments, two parameters, and one number — R₀ — that
+           decides whether nothing happens or everything does. <strong>SIR model.</strong></p>
+      </div>
+      <div class="card card--sim3">
+        <h3>When is a coin flip better than calculus?</h3>
+        <p>Surprisingly often. Some integrals have no closed form; a million
+           random samples will still get you an answer. <strong>Monte Carlo.</strong></p>
+      </div>
+      <div class="card card--sim4">
+        <h3>Why is the other queue always faster?</h3>
+        <p>It usually isn't — but the maths of waiting is genuinely
+           counterintuitive. <strong>Queueing theory.</strong></p>
+      </div>
+    </div>
+  </section>
 
-    <section class="hero">
-      <div class="hero-text">
-        <p class="eyebrow">Maliyadeva Simulation &amp; Modelling Society</p>
-        <h1>Some systems are too big, too slow, or too dangerous to experiment on. So we build them instead.</h1>
-        <p class="lede">
-          Why does a traffic jam appear on an empty road? How fast does a rumour
-          actually spread? What happens to a forest if you remove one species?
-          You can't run those experiments in real life. You can run them in code.
-        </p>
-<div class="cta">
-  <a class="btn accent" href="join.html">Join the club</a>
-  <a class="btn secondary" href="events.html">See upcoming sessions</a>
+  <section class="panel panel--sim3">
+    <h2>What a meeting is actually like</h2>
+    <p>
+      Fifteen minutes of announcements, a short walkthrough of one technique,
+      then an hour of building. We pair people up so nobody spends the session
+      alone with an error message. You leave with working code, not notes.
+    </p>
+  </section>
+
+  <section class="panel panel--sim1">
+    <h2>You don't need to be a programmer</h2>
+    <p>
+      Half the club started with no coding experience. If you can write a
+      for-loop, you're ready. If you can't yet, come anyway — the first
+      session is designed for you, and modelling is a genuinely good way to
+      learn to code, because every line you write does something visible.
+    </p>
+  </section>
+
+  <section class="panel panel--sim2">
+    <h2>When and where</h2>
+    <p>
+      <strong>Wednesdays, 3:30–5:00 PM, Room 214.</strong><br>
+      Bring a laptop if you have one. We have spares if you don't.
+    </p>
+    <p><a href="{{ '/join.html' | relative_url }}">Sign up →</a></p>
+  </section>
+
 </div>
-      </div>
-
-      <div class="hero-sim">
-        <canvas id="life" role="img"
-          aria-label="A live Conway's Game of Life simulation running on a grid."></canvas>
-        <p class="sim-caption">
-          <strong>Conway's Game of Life</strong> — running right now. Click the grid to draw.
-        </p>
-      </div>
-    </section>
-
-    <section class="panel panel--sim4">
-      <h2>Questions we chase</h2>
-      <div class="cards">
-        <div class="card card--sim1">
-          <h3>Where do traffic jams come from?</h3>
-          <p>Not from crashes or bottlenecks — a jam can appear spontaneously
-             on an empty road. <strong>Nagel–Schreckenberg
-             cellular automaton.</strong></p>
-        </div>
-        <div class="card card--sim2">
-          <h3>How does an outbreak take off?</h3>
-          <p>Three compartments, two parameters, and one number — R₀ — that
-             decides whether nothing happens or everything does. <strong>SIR model.</strong></p>
-        </div>
-        <div class="card card--sim3">
-          <h3>When is a coin flip better than calculus?</h3>
-          <p>Surprisingly often. Some integrals have no closed form; a million
-             random samples will still get you an answer. <strong>Monte Carlo.</strong></p>
-        </div>
-        <div class="card card--sim4">
-          <h3>Why is the other queue always faster?</h3>
-          <p>It usually isn't — but the maths of waiting is genuinely
-             counterintuitive. <strong>Queueing theory.</strong></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel panel--sim3">
-      <h2>What a meeting is actually like</h2>
-      <p>
-        Fifteen minutes of announcements, a short walkthrough of one technique,
-        then an hour of building. We pair people up so nobody spends the session
-        alone with an error message. You leave with working code, not notes.
-      </p>
-    </section>
-
-    <section class="panel panel--sim1">
-      <h2>You don't need to be a programmer</h2>
-      <p>
-        Half the club started with no coding experience. If you can write a
-        for-loop, you're ready. If you can't yet, come anyway — the first
-        session is designed for you, and modelling is a genuinely good way to
-        learn to code, because every line you write does something visible.
-      </p>
-    </section>
-
-    <hr>
-
-    <section class="panel panel--sim2">
-      <h2>When and where</h2>
-      <p>
-        <strong>Wednesdays, 3:30–5:00 PM, Room 214.</strong><br>
-        Bring a laptop if you have one. We have spares if you don't.
-      </p>
-      <p><a href="join.html">Sign up →</a></p>
-    </section>
-<script src="script.js"></script>
-</body>
-</html>
