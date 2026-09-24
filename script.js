@@ -11,13 +11,9 @@
     toggle.setAttribute('aria-expanded', String(open));
   }
 
+  // Single handler: read the current state, flip it, apply it once.
   toggle.addEventListener('click', function () {
-    setOpen(nav.classList.toggle('is-open') === false ? false : true);
-  });
-
-  // Recompute on click since classList.toggle returned nothing useful above
-  toggle.addEventListener('click', function () {
-    setOpen(nav.classList.contains('is-open'));
+    setOpen(!nav.classList.contains('is-open'));
   });
 
   document.addEventListener('keydown', function (e) {
@@ -32,8 +28,9 @@
     if (e.target.tagName === 'A') setOpen(false);
   });
 
-  // If the viewport grows past the breakpoint, reset state
-  var mq = window.matchMedia('(min-width: 621px)');
+  // Reset state when the viewport grows past the CSS breakpoint.
+  // Must match the CSS mobile-nav threshold at max-width: 700px.
+  var mq = window.matchMedia('(min-width: 701px)');
   var onChange = function () { if (mq.matches) setOpen(false); };
   mq.addEventListener ? mq.addEventListener('change', onChange) : mq.addListener(onChange);
 })();
