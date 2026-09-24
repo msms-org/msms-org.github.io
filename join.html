@@ -3,16 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Join — M&amp;S Club</title>
+<title>Join — MSMS</title>
+<meta name="description" content="Apply to join the Maliyadeva Simulation and Modelling Society. Open to any enrolled student — no prior coding experience required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.add('js');</script>
 </head>
-<script src="script.js"></script>
-  <body>
+<body>
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="index.html">M<span>&amp;</span>S Club</a>
+    <a class="brand" href="index.html">MSMS</a>
 
     <button class="nav-toggle" type="button"
             aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
@@ -23,88 +26,111 @@
 
     <nav class="site-nav" id="site-nav">
       <ul class="nav">
-        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="events.html">Events</a></li>
-        <li><a href="join.html">Join</a></li>
+        <li><a href="join.html" aria-current="page">Join</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
+<main>
+  <div class="wrap">
 
-<main class="wrap">
-  <h1>Join the club</h1>
-  <p class="lede">
-    Fill this in and we'll add you to the mailing list. No commitment —
-    come to as many or as few meetings as you like.
-  </p>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Maliyadeva Simulation &amp; Modelling Society</p>
+        <h1>Join the society</h1>
+        <p class="lede">
+          Any student enrolled at Maliyadeva College can apply. There's no
+          prior coding experience required and no minimum skill level — you
+          start as an Associate Member and progress to Regular Membership
+          through the work you do.
+        </p>
 
-  <!-- Replace YOUR_FORM_ID below. See setup notes. -->
-  <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="cta">
+          <!-- ============================================================
+               REPLACE the href below with your Google Form link.
+               The URL is a placeholder. It should look like:
+               https://forms.gle/xxxxxxxxxxxxxxxx
+               or
+               https://docs.google.com/forms/d/e/1FAIpQLSc…/viewform
+               ============================================================ -->
+          <a class="btn accent"
+             href="https://forms.gle/REPLACE-WITH-YOUR-FORM-ID"
+             target="_blank"
+             rel="noopener noreferrer">
+            Open the application form
+          </a>
+        </div>
+      </div>
+    </section>
 
-    <div class="field">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required autocomplete="name">
-    </div>
+    <section class="panel panel--sim4">
+      <h2>What you're joining</h2>
+      <p>
+        There are two kinds of membership. Everyone starts at the first one.
+      </p>
 
-    <div class="field">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required autocomplete="email">
-    </div>
+      <div class="cards cards--editorial">
 
-    <div class="field">
-      <label for="year">Year</label>
-      <select id="year" name="year">
-        <option value="">Select…</option>
-        <option>Freshman</option>
-        <option>Sophomore</option>
-        <option>Junior</option>
-        <option>Senior</option>
-        <option>Other</option>
-      </select>
-    </div>
+        <div class="card card--sim1">
+          <h3>Associate Member</h3>
+          <p>Open to every enrolled student. Full access to workshops,
+             projects, competitions, and Society resources. No voting
+             rights, no eligibility for the Executive Committee — but no
+             obligations either. You can come to as much or as little as
+             you like while you work out whether it's for you.</p>
+        </div>
 
-    <div class="field">
-      <label for="experience">Programming experience</label>
-      <select id="experience" name="experience">
-        <option value="">Select…</option>
-        <option>None yet</option>
-        <option>A little</option>
-        <option>Comfortable</option>
-        <option>Very comfortable</option>
-      </select>
-    </div>
+        <div class="card card--sim2">
+          <h3>Regular Member</h3>
+          <p>Earned through active participation, by either contributing
+             to a Society project or competing as part of an official
+             team. A Director verifies the work and the Secretary records
+             the change. Regular Members get voting rights and can stand
+             for the Executive Committee.</p>
+        </div>
 
-    <div class="field">
-      <label for="interests">What are you curious about? <span class="muted">(optional)</span></label>
-      <textarea id="interests" name="interests"
-        placeholder="Epidemics, traffic, ecosystems, physics engines, board game AI…"></textarea>
-    </div>
+      </div>
+    </section>
 
-    <!-- Honeypot: real people never see this. Bots fill it in. -->
-    <div class="hidden">
-      <label for="_gotcha">Leave this empty</label>
-      <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
-    </div>
+    <section class="panel panel--sim3">
+      <h2>What happens after you apply</h2>
+      <p>
+        Your application goes to the Secretary, who records you in the
+        membership register. There's no selection process, no interview,
+        and no waiting period — once you're recorded, you're a member.
+      </p>
+      <p>
+        You'll be told when the next session is and can turn up. Bring a
+        laptop if you have one — we have spares if you don't. That's the
+        whole process.
+      </p>
+    </section>
 
-    <button type="submit">Sign me up</button>
-  </form>
+    <section class="panel panel--sim2">
+      <h2>Still not sure?</h2>
+      <p>
+        Email <a href="mailto:felixx.a.wayne32@gmail.com">felixx.a.wayne32@gmail.com</a>
+        and ask. Or just turn up to a session and see what it's like before
+        you commit to anything.
+      </p>
+      <p>
+        <a href="events.html">See upcoming sessions →</a>
+      </p>
+    </section>
 
-  <hr>
-
-  <h2>Prefer email?</h2>
-  <p>
-    Write to <a href="mailto:ms-club@school.edu">ms-club@school.edu</a> and
-    we'll add you manually. Or just show up on Wednesday — that works too.
-  </p>
+  </div>
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>© 2026 M&amp;S Club · <a href="mailto:ms-club@school.edu">ms-club@school.edu</a></p>
+    <p>© 2026 MSMS · <a href="mailto:felixx.a.wayne32@gmail.com">felixx.a.wayne32@gmail.com</a></p>
   </div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>

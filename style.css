@@ -1,59 +1,211 @@
 /* ============================================================
-   THEME
-   Four hue families, each with bright/mid/dim.
-   Assign a family per content area — never mix within a family.
+   MSMS — VISUAL SYSTEM
+   ------------------------------------------------------------
+   Direction:
+   Institutional-computational hybrid.
+
+   The site belongs to the Maliyadeva Simulation & Modelling
+   Society — a school club at Maliyadeva College, Kurunegala.
+   Its visual identity is anchored in the college's heraldic
+   colours (Navy, Gold, Crimson) while keeping the analytical
+   precision of a computational laboratory.
+
+   Principles:
+   - Institutional anchor: college colours structure the page
+   - Computational voice: IBM Plex, lattice, live canvas
+   - Dual theme: light by default, dark on system preference
+   - Colour is semantic, not decorative
+   - Quiet surfaces, generous space
+   - Every panel is a bounded box; hover is physical, not decorative
+
+   Hue families (institutional):
+   sim1 — Navy Blue      simulation / Life
+   sim2 — College Gold   events / dates
+   sim3 — Emerald        methods / techniques
+   sim4 — Crimson        identity / actions
+
+   Keep --grid and --sim1-bright: script.js reads these.
    ============================================================ */
+
 :root {
-  /* Canvas — warm charcoal, never pure black */
-  --bg: #1b1a19;
-  --surface: #232221;
-  --surface-raised: #2d2c2a;
-  --border: #383634;
-  --border-strong: #484542;
+  /* ------------------------------------------------------------
+     PRIMITIVES — raw values. Not consumed directly.
+     ------------------------------------------------------------ */
 
-  /* Text — warm off-white */
-  --fg: #f4f2f0;
-  --fg-soft: #d7d3cf;
-  --muted: #a9a7a4;
-  --faint: #6f6d6a;
+  /* Navy family */
+  --navy-deep:   #0D111A;
+  --navy-900:    #151B28;
+  --navy-800:    #1E2638;
+  --navy-700:    #263147;
+  --navy-600:    #334155;
+  --navy-500:    #475569;
+  --navy-400:    #64748B;
+  --navy-300:    #94A3B8;
+  --navy-200:    #CBD5E1;
+  --navy-100:    #E2E8F0;
+  --navy-50:     #F1F5F9;
 
-  /* Family 1 — blue. Simulation, the Life canvas. */
-  --sim1-bright: #5b9cf5;
-  --sim1-mid:    #3a7bd5;
-  --sim1-dim:    #2a5a9e;
+  /* Neutral paper */
+  --paper-warm:  #F8F9FB;
+  --paper-white: #FFFFFF;
+  --paper-cool:  #EEF2F6;
 
-  /* Family 2 — amber. Events, dates, logistics. */
-  --sim2-bright: #f5a05b;
-  --sim2-mid:    #d47e3a;
-  --sim2-dim:    #9e5d2a;
+  /* College Gold */
+  --gold-600:    #D97706;
+  --gold-500:    #F59E0B;
+  --gold-400:    #FBBF24;
 
-  /* Family 3 — green. Techniques, what we work on. */
-  --sim3-bright: #6ee7a8;
-  --sim3-mid:    #3fb87a;
-  --sim3-dim:    #2a8a5a;
+  /* College Crimson Maroon */
+  --crimson-700: #9F1239;
+  --crimson-500: #E11D48;
+  --crimson-400: #FB7185;
 
-  /* Family 4 — violet. The club's voice: CTAs, eyebrows. */
-  --sim4-bright: #c48af5;
-  --sim4-mid:    #9a5fd4;
-  --sim4-dim:    #703fa0;
+  /* Emerald (methods) */
+  --emerald-600: #059669;
+  --emerald-500: #10B981;
+  --emerald-400: #34D399;
 
-  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Sky (simulation canvas) */
+  --sky-600:     #0284C7;
+  --sky-500:     #0EA5E9;
+  --sky-400:     #38BDF8;
 
-  --maxw: 960px;
-  --radius: 4px;
+  /* ------------------------------------------------------------
+     TYPOGRAPHY
+     ------------------------------------------------------------ */
 
-  /* Lattice — faint lines on charcoal.
-     --grid is read by script.js and painted onto the canvas, so keep the name. */
-  --grid: rgba(255, 255, 255, 0.045);
-  --lattice: rgba(255, 255, 255, 0.032);
+  --mono:
+    "IBM Plex Mono",
+    ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
 
-  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --sans:
+    "IBM Plex Sans",
+    system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --maxw: 980px;
+  --radius: 6px;
+  --ease: cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+/* ============================================================
+   LIGHT THEME — institutional paper (default)
+   ============================================================ */
+
+:root {
+  --bg:             var(--paper-warm);
+  --surface:        var(--paper-white);
+  --surface-raised: var(--paper-cool);
+  --surface-hover:  var(--navy-100);
+
+  --border:         #D0D7DE;
+  --border-strong:  var(--navy-400);
+  --border-soft:    rgba(15, 23, 42, 0.06);
+
+  --fg:       #0F172A;
+  --fg-soft:  var(--navy-600);
+  --muted:    var(--navy-400);
+  --faint:    var(--navy-300);
+
+  --sim1-bright: var(--sky-600);
+  --sim1-mid:    var(--sky-500);
+  --sim1-dim:    #0369A1;
+
+  --sim2-bright: var(--gold-600);
+  --sim2-mid:    var(--gold-500);
+  --sim2-dim:    #B45309;
+
+  --sim3-bright: var(--emerald-600);
+  --sim3-mid:    var(--emerald-500);
+  --sim3-dim:    #047857;
+
+  --sim4-bright: var(--crimson-700);
+  --sim4-mid:    var(--crimson-500);
+  --sim4-dim:    #881337;
+
+  /* script.js reads --grid for the canvas lattice */
+  --grid:    rgba(15, 23, 42, 0.06);
+  --lattice: rgba(15, 23, 42, 0.05);
+
+  --canvas-bg: var(--paper-warm);
+
+  --shadow-sm:
+    0 1px 3px rgba(15, 23, 42, 0.06),
+    0 2px 8px rgba(15, 23, 42, 0.04);
+
+  --shadow-md:
+    0 8px 24px rgba(15, 23, 42, 0.08),
+    0 24px 48px -24px rgba(15, 23, 42, 0.16);
+
+  --atmosphere-maroon: rgba(159, 18, 57, 0.045);
+  --atmosphere-gold:   rgba(217, 119, 6, 0.045);
+
+  --header-bg: rgba(248, 249, 251, 0.85);
+  --footer-bg: rgba(15, 23, 42, 0.03);
+  --selection: rgba(159, 18, 57, 0.18);
+}
+
+/* ============================================================
+   DARK THEME — institutional navy
+   ============================================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:             var(--navy-deep);
+    --surface:        var(--navy-900);
+    --surface-raised: var(--navy-800);
+    --surface-hover:  var(--navy-700);
+
+    --border:         var(--navy-700);
+    --border-strong:  var(--navy-600);
+    --border-soft:    rgba(241, 245, 249, 0.06);
+
+    --fg:       var(--navy-50);
+    --fg-soft:  var(--navy-200);
+    --muted:    var(--navy-300);
+    --faint:    var(--navy-400);
+
+    --sim1-bright: var(--sky-400);
+    --sim1-mid:    var(--sky-500);
+    --sim1-dim:    var(--sky-600);
+
+    --sim2-bright: var(--gold-500);
+    --sim2-mid:    var(--gold-400);
+    --sim2-dim:    var(--gold-600);
+
+    --sim3-bright: var(--emerald-400);
+    --sim3-mid:    var(--emerald-500);
+    --sim3-dim:    var(--emerald-600);
+
+    --sim4-bright: var(--crimson-400);
+    --sim4-mid:    var(--crimson-500);
+    --sim4-dim:    var(--crimson-700);
+
+    --grid:    rgba(241, 245, 249, 0.05);
+    --lattice: rgba(241, 245, 249, 0.03);
+
+    --canvas-bg: var(--navy-deep);
+
+    --shadow-sm:
+      0 1px 3px rgba(0, 0, 0, 0.4),
+      0 2px 8px rgba(0, 0, 0, 0.3);
+
+    --shadow-md:
+      0 8px 24px rgba(0, 0, 0, 0.4),
+      0 24px 48px -24px rgba(0, 0, 0, 0.6);
+
+    --atmosphere-maroon: rgba(251, 113, 133, 0.05);
+    --atmosphere-gold:   rgba(245, 158, 11, 0.04);
+
+    --header-bg: rgba(13, 17, 26, 0.85);
+    --footer-bg: rgba(0, 0, 0, 0.20);
+    --selection: rgba(251, 113, 133, 0.28);
+  }
 }
 
 /* ============================================================
    BASE
    ============================================================ */
+
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
@@ -72,59 +224,67 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* The lattice — fixed to the viewport, fading out toward the edges */
+/* Atmospheric lattice — reads as graph paper discovered in the
+   background rather than a UI grid. Uses --lattice, which swaps
+   automatically with the theme. */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
   pointer-events: none;
+
   background-image:
     linear-gradient(to right, var(--lattice) 1px, transparent 1px),
     linear-gradient(to bottom, var(--lattice) 1px, transparent 1px);
-  background-size: 34px 34px;
-  -webkit-mask-image: radial-gradient(120% 90% at 50% 0%, #000 0%, #000 34%, transparent 78%);
-          mask-image: radial-gradient(120% 90% at 50% 0%, #000 0%, #000 34%, transparent 78%);
+  background-size: 40px 40px;
+
+  -webkit-mask-image: radial-gradient(100% 80% at 50% 0%, #000 0%, #000 30%, transparent 76%);
+          mask-image: radial-gradient(100% 80% at 50% 0%, #000 0%, #000 30%, transparent 76%);
 }
 
-/* Two soft family-tinted glows behind everything */
+/* Very faint institutional warmth. Crimson and gold, not violet
+   and blue — the page glows in the college's palette. */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
+
   background:
-    radial-gradient(55ch 38ch at 6% -8%, rgba(196, 138, 245, 0.10), transparent 70%),
-    radial-gradient(48ch 34ch at 94% 0%, rgba(91, 156, 245, 0.075), transparent 70%);
+    radial-gradient(65rem 35rem at 8% -12%, var(--atmosphere-maroon), transparent 70%),
+    radial-gradient(60rem 32rem at 92% -8%, var(--atmosphere-gold), transparent 70%);
 }
 
-::selection {
-  background: rgba(196, 138, 245, 0.30);
-  color: var(--fg);
-}
+::selection { background: var(--selection); color: var(--fg); }
 
 .wrap {
   width: 100%;
   max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 0 1.25rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }
 
 /* ============================================================
-   HEADER + NAV
+   HEADER
    ============================================================ */
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(27, 26, 25, 0.82);
-  backdrop-filter: saturate(150%) blur(12px);
-  -webkit-backdrop-filter: saturate(150%) blur(12px);
+
+  background: var(--header-bg);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+
   border-bottom: 1px solid var(--border);
 }
 
-/* Hairline of colour along the bottom edge */
+/* Institutional identity line — maroon into gold, echoing the
+   college flag. Endpoints use hue-matched zero-alpha rather
+   than `transparent` to avoid grey banding. */
 .site-header::after {
   content: "";
   position: absolute;
@@ -133,41 +293,44 @@ body::after {
   bottom: -1px;
   height: 1px;
   pointer-events: none;
+
   background: linear-gradient(90deg,
-    transparent,
-    rgba(196, 138, 245, 0.40) 25%,
-    rgba(91, 156, 245, 0.30) 65%,
-    transparent);
-  opacity: 0.55;
+    transparent 8%,
+    color-mix(in srgb, var(--sim4-bright) 45%, transparent) 35%,
+    color-mix(in srgb, var(--sim2-bright) 40%, transparent) 65%,
+    transparent 92%);
 }
 
 .header-inner {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem 1.5rem;
-  padding-top: 0.9rem;
-  padding-bottom: 0.9rem;
+  gap: 1.5rem;
+  min-height: 68px;
 }
 
 .brand {
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: -0.01em;
-  text-decoration: none;
   color: var(--fg);
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s var(--ease);
 }
-.brand span { color: var(--sim4-bright); }
-.brand:hover { color: #fff; }
+
+/* Ampersand in College Gold — the institutional character accent */
+.brand span { color: var(--sim2-bright); }
+
+.brand:hover { color: var(--sim4-bright); }
 
 .site-nav { flex: 1 1 auto; }
 
 .nav {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: flex-end;
-  gap: 1.6rem;
+  gap: 1.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -176,98 +339,108 @@ body::after {
 .nav a {
   position: relative;
   display: inline-block;
-  text-decoration: none;
+  padding: 0.35rem 0;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  padding: 0.25rem 0;
-  transition: color 0.18s var(--ease);
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
 }
 
-/* Animated underline instead of a static border */
 .nav a::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: -1px;
-  height: 2px;
-  border-radius: 2px;
+  height: 1px;
   background: var(--sim4-bright);
   transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.22s var(--ease);
+  transform-origin: center;
+  transition: transform 0.25s var(--ease);
 }
 
 .nav a:hover { color: var(--fg); }
-.nav a:hover::after { transform: scaleX(1); }
-
-.nav a[aria-current="page"] { color: var(--fg); }
+.nav a:hover::after,
 .nav a[aria-current="page"]::after { transform: scaleX(1); }
+.nav a[aria-current="page"] { color: var(--fg); }
 
-/* Hamburger — only rendered when JS is present AND viewport is narrow */
+/* ============================================================
+   MOBILE NAV
+   ============================================================ */
+
 .nav-toggle {
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
   width: 40px;
   height: 40px;
   padding: 0;
-  background: none;
-  border: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+
+  background: transparent;
+  border: 1px solid transparent;
   border-radius: var(--radius);
   cursor: pointer;
-  transition: background 0.18s var(--ease);
+
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
 }
-.nav-toggle:hover { background: var(--surface-raised); }
+
+.nav-toggle:hover {
+  background: var(--surface);
+  border-color: var(--border);
+}
 
 .nav-toggle .bar {
-  display: block;
-  width: 20px;
-  height: 2px;
+  width: 19px;
+  height: 1.5px;
   border-radius: 2px;
   background: var(--fg);
-  transition: transform 0.18s var(--ease), opacity 0.18s var(--ease);
+  transition: transform 0.2s var(--ease), opacity 0.2s var(--ease);
 }
-.nav-toggle[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+
+.nav-toggle[aria-expanded="true"] .bar:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
 .nav-toggle[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
-.nav-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.nav-toggle[aria-expanded="true"] .bar:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
 
 /* ============================================================
-   MAIN
+   MAIN TYPOGRAPHY
    ============================================================ */
-main { padding: 0 0 5rem; }
+
+main { padding-bottom: 6rem; }
+
+h1, h2, h3 { text-wrap: balance; }
 
 h1 {
-  font-size: clamp(2rem, 5.5vw, 3.35rem);
-  font-weight: 700;
-  line-height: 1.03;
-  letter-spacing: -0.035em;
-  text-wrap: balance;
-  margin: 0 0 1.35rem;
+  max-width: 12ch;
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  font-weight: 650;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
 }
 
 h2 {
-  font-size: 1.42rem;
-  font-weight: 700;
-  letter-spacing: -0.018em;
-  text-wrap: balance;
-  margin: 3.25rem 0 0.9rem;
+  margin: 4.5rem 0 1.1rem;
+  font-size: clamp(1.45rem, 3vw, 1.8rem);
+  font-weight: 650;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
 }
 
 h3 {
-  font-size: 1.02rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
   margin: 0 0 0.45rem;
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
-p {
-  margin: 0 0 1rem;
-  text-wrap: pretty;
-}
+p { margin: 0 0 1rem; text-wrap: pretty; }
 
 a {
   color: var(--fg);
@@ -275,296 +448,356 @@ a {
   text-decoration-color: var(--faint);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-  transition: text-decoration-color 0.18s var(--ease), color 0.18s var(--ease);
+  transition: color 0.2s var(--ease), text-decoration-color 0.2s var(--ease);
 }
-a:hover { text-decoration-color: var(--sim4-bright); }
+
+a:hover {
+  color: var(--sim4-bright);
+  text-decoration-color: var(--sim4-bright);
+}
 
 .lede {
-  font-size: 1.18rem;
-  font-weight: 500;
-  line-height: 1.5;
+  max-width: 58ch;
+  margin-bottom: 1.8rem;
   color: var(--fg-soft);
-  max-width: 48ch;
-  margin-bottom: 1.75rem;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.55;
 }
 
-.muted {
-  color: var(--muted);
-  font-size: 0.86rem;
-}
+.muted { color: var(--muted); font-size: 0.88rem; }
 
 hr {
+  height: 1px;
+  margin: 4rem 0;
   border: 0;
-  height: 1px;
-  background: linear-gradient(90deg,
-    transparent, var(--border) 12%, var(--border) 88%, transparent);
-  margin: 3.25rem 0;
-}
-
-/* Monospace eyebrow — the club's voice in violet */
-.eyebrow {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--sim4-bright);
-  margin: 0 0 1.15rem;
-}
-.eyebrow::before {
-  content: "";
-  display: inline-block;
-  width: 1.5rem;
-  height: 1px;
-  margin-right: 0.65rem;
-  vertical-align: middle;
-  background: currentColor;
-  opacity: 0.55;
-}
-
-/* Keyboard focus — visible, but never for mouse clicks */
-a:focus-visible,
-button:focus-visible,
-.btn:focus-visible {
-  outline: 2px solid var(--sim4-bright);
-  outline-offset: 3px;
-  border-radius: var(--radius);
+  background: linear-gradient(90deg, transparent, var(--border) 15%, var(--border) 85%, transparent);
 }
 
 /* ============================================================
-   HERO — single column on every viewport
+   EYEBROW — the club's institutional voice, in maroon
    ============================================================ */
-.hero {
-  display: grid;
-  gap: 3rem;
-  padding: 4rem 0 1.5rem;
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 1.25rem;
+  color: var(--sim4-bright);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
 }
 
-.hero-text { max-width: 62ch; }
+.eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 1px;
+  flex: 0 0 auto;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+/* ============================================================
+   FOCUS — visible against both themes, 3:1 minimum
+   ============================================================ */
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--sim4-bright);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  display: grid;
+  gap: 3.5rem;
+  padding: clamp(4.5rem, 10vw, 8rem) 0 2rem;
+}
+
+.hero-text { max-width: 66ch; }
+
+/* ============================================================
+   CTA
+   ============================================================ */
 
 .cta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 2.1rem;
+  margin-top: 2.25rem;
 }
 
 /* ============================================================
-   BUTTONS — ghost by default, one filled accent
+   BUTTONS — primary action uses College Crimson
    ============================================================ */
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: inherit;
-  font-size: 0.94rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  text-decoration: none;
-  padding: 0.72rem 1.4rem;
-  border: 1px solid var(--fg);
-  border-radius: var(--radius);
-  background: transparent;
-  color: var(--fg);
-  cursor: pointer;
-  transition: background 0.18s var(--ease), color 0.18s var(--ease),
-              border-color 0.18s var(--ease), transform 0.18s var(--ease),
-              box-shadow 0.18s var(--ease);
-}
-.btn:hover {
-  background: var(--fg);
-  color: var(--bg);
-  text-decoration: none;
-}
-.btn:active { transform: translateY(1px); }
 
-.btn.secondary {
-  border-color: var(--border-strong);
-  color: var(--muted);
+  min-height: 44px;
+  padding: 0.65rem 1.15rem;
+
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--fg);
+
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s var(--ease),
+    background 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    color 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
 }
-.btn.secondary:hover {
+
+.btn:hover {
+  background: var(--surface-hover);
   border-color: var(--muted);
   color: var(--fg);
-  background: rgba(255, 255, 255, 0.04);
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:active { transform: translateY(0); }
+
+.btn.secondary {
+  background: transparent;
+  color: var(--muted);
+  border-color: var(--border);
+}
+
+.btn.secondary:hover {
+  color: var(--fg);
+  border-color: var(--border-strong);
+  background: var(--surface);
 }
 
 .btn.accent {
   background: var(--sim4-bright);
   border-color: var(--sim4-bright);
-  color: #1a1918;
-  box-shadow: 0 10px 26px -14px rgba(196, 138, 245, 0.85);
+  color: #FFF;
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--sim4-bright) 28%, transparent);
 }
+
 .btn.accent:hover {
   background: var(--sim4-mid);
   border-color: var(--sim4-mid);
-  color: #121110;
-  box-shadow: 0 14px 30px -14px rgba(196, 138, 245, 0.95);
+  color: #FFF;
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--sim4-bright) 40%, transparent);
 }
 
 /* ============================================================
    SIMULATION PANEL
+   ------------------------------------------------------------
+   The visual centrepiece. An instrument, not a card.
+   The canvas keeps its own --canvas-bg and reads --grid at
+   runtime, so it adapts to the active theme automatically.
    ============================================================ */
+
 .hero-sim {
   position: relative;
-  background: linear-gradient(180deg, var(--surface-raised), var(--surface));
+  padding: 0.5rem;
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0.75rem;
-  box-shadow:
-    0 30px 70px -40px rgba(0, 0, 0, 0.95),
-    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+  border-radius: calc(var(--radius) + 2px);
+  box-shadow: var(--shadow-md);
+  transition: box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 
-/* Blue accent bar along the top of the panel */
+.hero-sim:hover {
+  border-color: var(--border-strong);
+  box-shadow:
+    var(--shadow-md),
+    0 0 0 1px color-mix(in srgb, var(--sim1-bright) 18%, transparent);
+}
+
 .hero-sim::before {
   content: "";
   position: absolute;
   top: -1px;
-  left: -1px;
-  right: -1px;
-  height: 2px;
-  border-radius: 6px 6px 0 0;
-  background: linear-gradient(90deg,
-    var(--sim1-bright), var(--sim1-dim) 55%, transparent);
-  opacity: 0.85;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--sim1-bright), transparent);
+  opacity: 0.75;
+  transition: opacity 0.3s var(--ease);
 }
+
+.hero-sim:hover::before { opacity: 1; }
 
 .hero-sim canvas {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 3px;
   border: 1px solid var(--border);
-  background: #191817;
+  border-radius: 3px;
+  background: var(--canvas-bg);
   cursor: crosshair;
   touch-action: manipulation;
+  transition: background 0.3s var(--ease);
 }
 
 .sim-caption {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  line-height: 1.6;
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin: 0.7rem 0.25rem 0.2rem;
   color: var(--muted);
-  margin: 0.75rem 0 0.1rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  line-height: 1.5;
 }
+
 .sim-caption strong {
   color: var(--sim1-bright);
   font-weight: 500;
 }
 
+/* Small breathing indicator — a status light, not a badge */
+.sim-caption strong::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 0.45rem;
+  vertical-align: 0.08em;
+  border-radius: 50%;
+  background: currentColor;
+  animation: breathe 2.4s var(--ease) infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 1;    transform: scale(1);   }
+  50%      { opacity: 0.45; transform: scale(0.8); }
+}
+
 /* ============================================================
-   CARDS — one hue family per card
+   CARDS — generic card grid.
+   Colour identifies the subject; it does not fill the card.
+   The top bar thickens and a soft inset ring appears on hover.
    ============================================================ */
+
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 0.9rem;
-  margin: 1.5rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1px;
+  margin: 1.75rem 0;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .card {
-  --card-glow: transparent;
+  --card-accent: var(--sim4-bright);
   position: relative;
-  overflow: hidden;
-  background: linear-gradient(180deg, var(--surface-raised), var(--surface) 70%);
-  border: 1px solid var(--border);
-  border-left-width: 3px;
-  border-radius: var(--radius);
-  padding: 1.15rem 1.25rem;
-  transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+  padding: 1.4rem 1.35rem;
+  background: var(--surface);
+  border: 0;
+  transition:
+    background 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
 }
 
-/* A whisper of the family colour bleeding in from the corner */
+/* The family-coloured top bar grows on hover */
 .card::before {
   content: "";
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(130% 90% at 0% 0%, var(--card-glow), transparent 62%);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--card-accent);
+  opacity: 0.75;
+  transition:
+    opacity 0.25s var(--ease),
+    height 0.25s var(--ease);
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 22px 45px -30px rgba(0, 0, 0, 0.95);
+  background: var(--surface-raised);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--card-accent) 18%, transparent);
+}
+
+.card:hover::before {
+  opacity: 1;
+  height: 3px;
 }
 
 .card p {
-  margin-bottom: 0;
-  font-size: 0.94rem;
-  line-height: 1.55;
+  margin: 0;
   color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
 }
+
 .card p strong { color: var(--fg); font-weight: 600; }
+.card h3 { color: var(--card-accent); }
 
-.card--sim1 { border-left-color: var(--sim1-bright); --card-glow: rgba(91, 156, 245, 0.10); }
-.card--sim1 h3 { color: var(--sim1-bright); }
-
-.card--sim2 { border-left-color: var(--sim2-bright); --card-glow: rgba(245, 160, 91, 0.10); }
-.card--sim2 h3 { color: var(--sim2-bright); }
-
-.card--sim3 { border-left-color: var(--sim3-bright); --card-glow: rgba(110, 231, 168, 0.10); }
-.card--sim3 h3 { color: var(--sim3-bright); }
-
-.card--sim4 { border-left-color: var(--sim4-bright); --card-glow: rgba(196, 138, 245, 0.10); }
-.card--sim4 h3 { color: var(--sim4-bright); }
-
-/* ============================================================
-   EVENTS — always amber
-   ============================================================ */
-.event {
-  position: relative;
-  border-left: 3px solid var(--sim2-bright);
-  padding: 0.15rem 0 0.15rem 1.15rem;
-  margin-bottom: 1.9rem;
-}
-.event::before {
-  content: "";
-  position: absolute;
-  left: -3px;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  border-radius: 3px;
-  background: var(--sim2-bright);
-  filter: blur(5px);
-  opacity: 0.35;
-  pointer-events: none;
-}
-.event h3 { color: var(--sim2-bright); }
-.event p:last-child { margin-bottom: 0; }
+.card--sim1 { --card-accent: var(--sim1-bright); }
+.card--sim2 { --card-accent: var(--sim2-bright); }
+.card--sim3 { --card-accent: var(--sim3-bright); }
+.card--sim4 { --card-accent: var(--sim4-bright); }
 
 /* ============================================================
    FORMS
    ============================================================ */
+
 .form {
   display: grid;
-  gap: 1.1rem;
-  margin-top: 1.75rem;
-  max-width: 34rem;
+  gap: 1.15rem;
+  max-width: 36rem;
+  margin-top: 1.8rem;
 }
 
-.field { display: grid; gap: 0.4rem; }
+.field { display: grid; gap: 0.45rem; }
 
 label {
-  font-size: 0.88rem;
+  color: var(--fg-soft);
+  font-size: 0.86rem;
   font-weight: 600;
-  letter-spacing: 0.005em;
 }
 
 input, select, textarea {
-  font: inherit;
-  font-size: 0.96rem;
-  color: var(--fg);
-  background: var(--surface);
+  width: 100%;
+  padding: 0.72rem 0.8rem;
+
   border: 1px solid var(--border-strong);
   border-radius: var(--radius);
-  padding: 0.68rem 0.78rem;
-  width: 100%;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
-  transition: border-color 0.18s var(--ease), box-shadow 0.18s var(--ease),
-              background 0.18s var(--ease);
+  background: var(--surface);
+  color: var(--fg);
+
+  font-family: inherit;
+  font-size: 0.95rem;
+
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+
+  transition:
+    background 0.2s var(--ease),
+    border-color 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
 }
-textarea { resize: vertical; min-height: 110px; }
+
+textarea { min-height: 120px; resize: vertical; }
 
 input::placeholder, textarea::placeholder { color: var(--faint); }
 
@@ -574,40 +807,310 @@ input:focus, select:focus, textarea:focus {
   outline: none;
   background: var(--surface-raised);
   border-color: var(--sim4-bright);
-  box-shadow: 0 0 0 3px rgba(196, 138, 245, 0.16);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--sim4-bright) 18%, transparent);
 }
 
 .form .btn { justify-self: start; margin-top: 0.35rem; }
 
-/* Honeypot */
-.hidden { position: absolute; left: -9999px; }
+/* ============================================================
+   HONEYPOT
+   ============================================================ */
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
 
 /* ============================================================
    FOOTER
    ============================================================ */
+
 .site-footer {
+  padding: 1.8rem 0;
   border-top: 1px solid var(--border);
-  padding: 1.6rem 0;
+  background: var(--footer-bg);
   color: var(--faint);
-  font-size: 0.86rem;
-  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.18));
+  font-size: 0.82rem;
 }
+
 .site-footer a {
   color: var(--faint);
   text-decoration-color: transparent;
+  transition: color 0.2s var(--ease), text-decoration-color 0.2s var(--ease);
 }
+
 .site-footer a:hover {
-  color: var(--muted);
-  text-decoration-color: var(--faint);
+  color: var(--sim4-bright);
+  text-decoration-color: var(--sim4-bright);
 }
+
 .site-footer p { margin: 0; }
 
 /* ============================================================
-   BREAKPOINTS — two, only where fluid can't express the change
+   CONTENT PANELS — scientific-publication spine
+   ------------------------------------------------------------
+   Every panel is enclosed by a full border so the page reads
+   as a set of consistent, bounded sections. The heading marker
+   carries the panel's accent colour.
    ============================================================ */
 
-/* Narrow: collapse nav into hamburger. JS-gated so no-JS still gets a nav. */
-@media (max-width: 620px) {
+.panel {
+  position: relative;
+  margin: 5.5rem 0 0;
+  padding: 1.85rem 1.85rem 1.85rem 1.5rem;
+
+  border: 1px solid var(--border);
+  border-radius: 4px;
+
+  transition:
+    border-color 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
+}
+
+/* Hover wash — tints the interior in the panel's own accent */
+.panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: color-mix(in srgb, var(--panel-accent, var(--sim4-bright)) 4%, transparent);
+  transition: opacity 0.4s var(--ease);
+}
+
+.panel:hover {
+  border-color: color-mix(in srgb, var(--panel-accent, var(--sim4-bright)) 35%, var(--border));
+  box-shadow: var(--shadow-sm);
+}
+
+.panel:hover::after { opacity: 1; }
+
+.panel h2 {
+  position: relative;
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.65rem, 4vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+/* Small marker beside each heading — the panel's accent signal.
+   Sits just inside the left border. */
+.panel h2::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: 0.18em;
+  width: 3px;
+  height: 1.15em;
+  background: var(--panel-accent, var(--sim4-bright));
+  border-radius: 2px;
+  opacity: 0.7;
+  transition:
+    opacity 0.4s var(--ease),
+    width 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
+}
+
+.panel:hover h2::before {
+  opacity: 1;
+  width: 4px;
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--panel-accent, var(--sim4-bright)) 15%, transparent);
+}
+
+.panel > p {
+  max-width: 62ch;
+  color: var(--fg-soft);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.panel > p:last-child { margin-bottom: 0; }
+
+/* ------------------------------------------------------------
+   Panel accent mapping
+   ------------------------------------------------------------ */
+
+.panel--sim1 { --panel-accent: var(--sim1-bright); }
+.panel--sim2 { --panel-accent: var(--sim2-bright); }
+.panel--sim3 { --panel-accent: var(--sim3-bright); }
+.panel--sim4 { --panel-accent: var(--sim4-bright); }
+
+/* ============================================================
+   QUESTIONS WE CHASE
+   ------------------------------------------------------------
+   Two-column editorial grid. Each question is a research block
+   separated by hairline rules, not a floating card.
+   ============================================================ */
+
+.panel--sim4 h2 { margin-bottom: 2rem; }
+
+.panel--sim4 .cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  overflow: visible;
+}
+
+.panel--sim4 .card {
+  --card-accent: var(--sim4-bright);
+  position: relative;
+  padding: 1.7rem 1.75rem 1.8rem 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  transition:
+    background 0.25s var(--ease),
+    padding-left 0.25s var(--ease);
+}
+
+.panel--sim4 .card:nth-child(even) {
+  padding-left: 1.75rem;
+  border-left: 1px solid var(--border);
+  transition:
+    background 0.25s var(--ease),
+    padding-left 0.25s var(--ease);
+}
+
+.panel--sim4 .card::before { content: none; }
+
+/* Small dot marker, colour-coded per family — the semantic signal */
+.panel--sim4 .card::after {
+  content: "";
+  position: absolute;
+  top: 1.8rem;
+  right: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--card-accent);
+  opacity: 0.7;
+  transition:
+    opacity 0.25s var(--ease),
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+
+.panel--sim4 .card:nth-child(even)::after { right: 0.05rem; }
+
+/* Question cards: the dot brightens and the block gently indents
+   on hover, like a pen mark being added in the margin. */
+.panel--sim4 .card:hover {
+  background: color-mix(in srgb, var(--card-accent) 4%, transparent);
+  padding-left: 0.5rem;
+}
+
+.panel--sim4 .card:nth-child(even):hover {
+  padding-left: 2.25rem;
+}
+
+.panel--sim4 .card:hover::after {
+  opacity: 1;
+  transform: scale(1.5);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--card-accent) 18%, transparent);
+}
+
+.panel--sim4 .card h3 {
+  max-width: 26ch;
+  margin: 0 0 0.75rem;
+  color: var(--fg);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  transition: color 0.2s var(--ease);
+}
+
+.panel--sim4 .card:hover h3 { color: var(--card-accent); }
+
+.panel--sim4 .card p {
+  max-width: 43ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.91rem;
+  line-height: 1.65;
+}
+
+/* The method name becomes a mono tag, colour-matched */
+.panel--sim4 .card p strong {
+  color: var(--card-accent);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.panel--sim4 .card--sim1 { --card-accent: var(--sim1-bright); }
+.panel--sim4 .card--sim2 { --card-accent: var(--sim2-bright); }
+.panel--sim4 .card--sim3 { --card-accent: var(--sim3-bright); }
+.panel--sim4 .card--sim4 { --card-accent: var(--sim4-bright); }
+
+/* ============================================================
+   STANDARD INFORMATION SECTIONS
+   ============================================================ */
+
+.panel--sim3 > p,
+.panel--sim1 > p {
+  max-width: 62ch;
+  font-size: clamp(1rem, 2vw, 1.08rem);
+  line-height: 1.75;
+}
+
+/* ============================================================
+   "WHEN AND WHERE" — same boxed panel as everything else,
+   just with tighter internal rhythm. College Gold accent.
+   ============================================================ */
+
+.panel--sim2 {
+  --panel-accent: var(--sim2-bright);
+}
+
+.panel--sim2 h2 { margin-bottom: 1rem; }
+.panel--sim2 > p { max-width: 48ch; }
+.panel--sim2 strong { color: var(--fg); font-weight: 600; }
+
+.panel--sim2 a {
+  color: var(--sim2-bright);
+  font-weight: 600;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.2s var(--ease);
+}
+
+.panel--sim2 a:hover { text-decoration-color: var(--sim2-bright); }
+
+/* ============================================================
+   SECTION SEPARATOR
+   ============================================================ */
+
+main > .wrap > hr {
+  margin: 5rem 0 0;
+  background: linear-gradient(90deg, transparent, var(--border) 10%, var(--border) 90%, transparent);
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+  .wrap { padding-inline: 1.15rem; }
+  .header-inner { min-height: 62px; }
+
   .js .nav-toggle { display: flex; }
 
   .js .site-nav {
@@ -619,18 +1122,20 @@ input:focus, select:focus, textarea:focus {
 
   .js .site-nav.is-open {
     display: block;
-    animation: navIn 0.18s var(--ease) both;
+    animation: navIn 0.2s var(--ease) both;
   }
 
   @keyframes navIn {
-    from { opacity: 0; transform: translateY(-4px); }
+    from { opacity: 0; transform: translateY(-5px); }
     to   { opacity: 1; transform: none; }
   }
 
   .js .site-nav .nav {
+    display: flex;
     flex-direction: column;
+    align-items: stretch;
     gap: 0;
-    padding-top: 0.35rem;
+    padding-top: 0.25rem;
     border-top: 1px solid var(--border);
   }
 
@@ -639,23 +1144,505 @@ input:focus, select:focus, textarea:focus {
   .js .site-nav .nav a {
     display: block;
     padding: 0.8rem 0.15rem;
-    border-bottom: 0;
-    border-radius: var(--radius);
+    color: var(--muted);
   }
 
-  /* The sliding underline doesn't suit a stacked list */
   .js .site-nav .nav a::after { display: none; }
-  .js .site-nav .nav a:hover { color: var(--fg); padding-left: 0.35rem; }
+  .js .site-nav .nav a:hover { color: var(--fg); padding-left: 0.3rem; }
   .js .site-nav .nav a[aria-current="page"] { color: var(--sim4-bright); }
 
-  .hero { padding-top: 3rem; }
+  .hero {
+    gap: 2.5rem;
+    padding-top: 3.75rem;
+  }
+
+  h1 {
+    max-width: 14ch;
+    font-size: clamp(2.3rem, 13vw, 3.6rem);
+  }
+
+  h2 { margin-top: 3.5rem; }
+
+  .cards { grid-template-columns: 1fr; }
+
+  .cta { flex-direction: column; align-items: stretch; }
+  .cta .btn { width: 100%; }
+
+  .panel {
+    margin-top: 4rem;
+    padding: 1.5rem 1.25rem 1.5rem 1.25rem;
+  }
+
+  .panel h2::before { left: -1.25rem; }
+
+  .panel--sim4 .cards { grid-template-columns: 1fr; }
+
+  .panel--sim4 .card,
+  .panel--sim4 .card:nth-child(even) {
+    padding: 1.4rem 0 1.5rem;
+    border-left: 0;
+  }
+
+  /* Disable the horizontal indent on mobile — there's no room */
+  .panel--sim4 .card:hover,
+  .panel--sim4 .card:nth-child(even):hover {
+    padding-left: 0;
+  }
+
+  .panel--sim4 .card::after { display: none; }
+  .panel--sim4 .card h3 { max-width: none; }
 }
 
-/* Reduced motion */
+/* ============================================================
+   VERY NARROW SCREENS
+   ============================================================ */
+
+@media (max-width: 420px) {
+  .panel { padding: 1.35rem 1.1rem 1.35rem 1.1rem; }
+  .panel h2::before { left: -1.1rem; }
+  .panel h2 { font-size: 1.5rem; }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ============================================================
+   EDITORIAL CARD GRID — reusable
+   ------------------------------------------------------------
+   The two-column, rule-bounded card layout used by "Questions
+   we chase" on the homepage. Opt in via .cards--editorial on
+   any .cards container.
+
+   Uses .cards.cards--editorial for extra specificity so it
+   always wins over the base .cards grid.
+   ============================================================ */
+
+.cards.cards--editorial {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin: 0.5rem 0 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  overflow: visible;
+}
+
+.cards.cards--editorial .card {
+  --card-accent: var(--sim4-bright);
+  position: relative;
+  padding: 1.7rem 1.75rem 1.8rem 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  box-shadow: none;
+  transition:
+    background 0.25s var(--ease),
+    padding-left 0.25s var(--ease);
+}
+
+.cards.cards--editorial .card:nth-child(even) {
+  padding-left: 1.75rem;
+  border-left: 1px solid var(--border);
+}
+
+.cards.cards--editorial .card::before { content: none; }
+
+.cards.cards--editorial .card::after {
+  content: "";
+  position: absolute;
+  top: 1.8rem;
+  right: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--card-accent);
+  opacity: 0.7;
+  transition:
+    opacity 0.25s var(--ease),
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+
+.cards.cards--editorial .card:nth-child(even)::after { right: 0.05rem; }
+
+.cards.cards--editorial .card:hover {
+  background: color-mix(in srgb, var(--card-accent) 4%, transparent);
+  padding-left: 0.5rem;
+}
+
+.cards.cards--editorial .card:nth-child(even):hover {
+  padding-left: 2.25rem;
+}
+
+.cards.cards--editorial .card:hover::after {
+  opacity: 1;
+  transform: scale(1.5);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--card-accent) 18%, transparent);
+}
+
+.cards.cards--editorial .card h3 {
+  max-width: 26ch;
+  margin: 0 0 0.75rem;
+  color: var(--fg);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  transition: color 0.2s var(--ease);
+}
+
+.cards.cards--editorial .card:hover h3 { color: var(--card-accent); }
+
+.cards.cards--editorial .card p {
+  max-width: 43ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.91rem;
+  line-height: 1.65;
+}
+
+.cards.cards--editorial .card p strong {
+  color: var(--card-accent);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.cards.cards--editorial .card--sim1 { --card-accent: var(--sim1-bright); }
+.cards.cards--editorial .card--sim2 { --card-accent: var(--sim2-bright); }
+.cards.cards--editorial .card--sim3 { --card-accent: var(--sim3-bright); }
+.cards.cards--editorial .card--sim4 { --card-accent: var(--sim4-bright); }
+
+@media (max-width: 700px) {
+  .cards.cards--editorial { grid-template-columns: 1fr; }
+
+  .cards.cards--editorial .card,
+  .cards.cards--editorial .card:nth-child(even) {
+    padding: 1.4rem 0 1.5rem;
+    border-left: 0;
+  }
+
+  .cards.cards--editorial .card:hover,
+  .cards.cards--editorial .card:nth-child(even):hover {
+    padding-left: 0;
+  }
+
+  .cards.cards--editorial .card::after { display: none; }
+  .cards.cards--editorial .card h3 { max-width: none; }
+}
+
+/* ============================================================
+   EVENTS — timeline with a featured "next up" treatment
+   ------------------------------------------------------------
+   Three tiers:
+     .event--featured       the next session, given real weight
+     .event-list .event     remaining upcoming, with hover
+     .event--past           archived, quieter, no hover
+   ============================================================ */
+
+/* ---------- shared: date marker ---------- */
+
+.event-date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--mono);
+  line-height: 1;
+  padding-top: 0.2rem;
+}
+
+.event-day {
+  font-size: 1.85rem;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  color: var(--sim2-bright);
+  transition: color 0.25s var(--ease);
+}
+
+.event-month {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+
+/* ---------- shared: event body ---------- */
+
+.event-body h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: -0.014em;
+  line-height: 1.3;
+  transition: color 0.25s var(--ease);
+}
+
+.event-body p {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  max-width: 56ch;
+}
+
+.event-body p:last-child { margin-bottom: 0; }
+
+.event-meta {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: var(--faint);
+  margin: 0;
+}
+
+.event-notes {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  margin: 0.55rem 0 0;
+}
+
+/* ============================================================
+   FEATURED — the next session
+   ============================================================ */
+
+.event.event--featured {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 2rem;
+  align-items: start;
+
+  padding: 1.85rem 1.75rem 1.85rem 1.5rem;
+  margin: 0.75rem 0 1.75rem;
+
+  background: color-mix(in srgb, var(--sim2-bright) 5%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--sim2-bright) 24%, var(--border));
+  border-radius: 6px;
+
+  transition:
+    background 0.3s var(--ease),
+    border-color 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
+}
+
+.event.event--featured:hover {
+  background: color-mix(in srgb, var(--sim2-bright) 8%, var(--surface));
+  border-color: color-mix(in srgb, var(--sim2-bright) 45%, var(--border));
+  box-shadow: 0 10px 30px -16px color-mix(in srgb, var(--sim2-bright) 35%, transparent);
+}
+
+.event--featured .event-date { padding-top: 0.35rem; }
+.event--featured .event-day { font-size: 2.85rem; }
+.event--featured .event-month { font-size: 0.75rem; }
+
+.event--featured h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.event--featured p {
+  font-size: 1rem;
+  max-width: 60ch;
+}
+
+.event--featured .event-meta {
+  margin-top: 1.15rem;
+  color: var(--muted);
+}
+
+/* ---------- "Next session" kicker ---------- */
+
+.event-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sim2-bright);
+  margin: 0 0 0.75rem;
+}
+
+.event-kicker::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: breathe 2.4s var(--ease) infinite;
+}
+
+/* ============================================================
+   EVENT LIST — remaining upcoming sessions
+   ============================================================ */
+
+.event-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid var(--border);
+}
+
+.event-list .event {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 1.5rem;
+  align-items: start;
+
+  padding: 1.7rem 0;
+  margin: 0;
+
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+
+  transition: background 0.25s var(--ease);
+}
+
+.event-list .event:last-child { border-bottom: 0; }
+
+.event-list .event:hover {
+  background: color-mix(in srgb, var(--sim2-bright) 5%, transparent);
+}
+
+.event-list .event:hover h3 { color: var(--sim2-bright); }
+.event-list .event:hover .event-day { color: var(--sim2-mid); }
+
+.event-list .event-body {
+  transition: transform 0.25s var(--ease);
+}
+
+.event-list .event:hover .event-body {
+  transform: translateX(0.5rem);
+}
+
+/* ============================================================
+   PAST — archived, quieter, non-interactive
+   ============================================================ */
+
+.event-list .event--past {
+  padding: 1.3rem 0;
+}
+
+.event-list .event--past:hover {
+  background: transparent;
+}
+
+.event-list .event--past:hover .event-body {
+  transform: none;
+}
+
+.event-list .event--past h3 {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.event-list .event--past:hover h3 {
+  color: var(--fg);
+}
+
+.event-list .event--past .event-day {
+  font-size: 1.4rem;
+  color: var(--faint);
+}
+
+.event-list .event--past:hover .event-day {
+  color: var(--faint);
+}
+
+.event-list .event--past p {
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   PANEL VARIANT — Past sessions
+   ============================================================ */
+
+.panel--past {
+  --panel-accent: var(--muted);
+  background: color-mix(in srgb, var(--muted) 3%, var(--surface));
+  border-color: color-mix(in srgb, var(--muted) 15%, var(--border));
+}
+
+.panel--past:hover {
+  border-color: color-mix(in srgb, var(--muted) 30%, var(--border));
+  box-shadow: var(--shadow-sm);
+}
+
+.panel--past h2 {
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+}
+
+.panel--past h2::before {
+  background: var(--muted);
+  box-shadow: none;
+}
+
+.panel--past:hover h2::before {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--muted) 15%, transparent);
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 640px) {
+
+  .event.event--featured {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem 1.3rem;
+  }
+
+  .event--featured .event-date {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.55rem;
+    padding-top: 0;
+  }
+
+  .event--featured .event-day { font-size: 1.75rem; }
+  .event--featured .event-month { margin-top: 0; }
+  .event--featured h3 { font-size: 1.25rem; }
+  .event--featured p { font-size: 0.95rem; }
+
+  .event-list .event {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    padding: 1.5rem 0;
+  }
+
+  .event-list .event:hover .event-body {
+    transform: none;
+  }
+
+  .event-date {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.55rem;
+    padding-top: 0;
+  }
+
+  .event-day { font-size: 1.25rem; }
+  .event-month { margin-top: 0; }
 }
