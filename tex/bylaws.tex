@@ -1,0 +1,792 @@
+\documentclass[a4paper]{article}
+
+% ==============================================================================
+% LANGUAGE, ENCODING & FONTS
+% ==============================================================================
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+% Better handling of justification and line breaking
+\usepackage{microtype}
+\emergencystretch=2em
+
+% ==============================================================================
+% PAGE LAYOUT
+% ==============================================================================
+\usepackage[
+    a4paper,
+    top=1in,
+    bottom=1in,
+    left=0.8in,
+    right=0.8in,
+    headheight=14pt
+]{geometry}
+
+% ==============================================================================
+% DOCUMENT SPACING
+% ==============================================================================
+\usepackage{setspace}
+\usepackage{parskip}
+
+\setstretch{1.08}
+
+% ==============================================================================
+% SECTION & HEADING FORMATTING
+% ==============================================================================
+
+\usepackage{titlesec}
+\setcounter{tocdepth}{2}
+
+% --- Article level ------------------------------------------------------------
+
+\titleformat{\section}
+    {\normalfont\Large\bfseries}
+    {\thesection}
+    {1em}
+    {}
+
+\titlespacing*{\section}
+    {0pt}
+    {3.0ex plus 1ex minus .2ex}
+    {1.5ex plus .2ex}
+
+% --- Section level ------------------------------------------------------------
+
+\titleformat{\subsection}
+    {\normalfont\large\bfseries}
+    {\thesubsection}
+    {1em}
+    {}
+
+\titlespacing*{\subsection}
+    {0pt}
+    {2.5ex plus .7ex minus .2ex}
+    {1.2ex plus .2ex}
+
+% --- Subsection level ---------------------------------------------------------
+
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries}
+    {\thesubsubsection}
+    {1em}
+    {}
+
+\titlespacing*{\subsubsection}
+    {0pt}
+    {2ex plus .5ex minus .2ex}
+    {0.8ex plus .2ex}
+
+% --- Paragraph headings -------------------------------------------------------
+
+\titleformat{\paragraph}
+    {\normalfont\normalsize\bfseries}
+    {}
+    {0pt}
+    {}
+
+\titlespacing*{\paragraph}
+    {0pt}
+    {1.2ex plus .3ex minus .1ex}
+    {0.7em}
+
+% ==============================================================================
+% HEADERS & FOOTERS
+% ==============================================================================
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+% Header
+\lhead{\small\textsc{Maliyadeva Simulation and Modelling Society}}
+\rhead{\small\textsc{Bylaws}}
+
+% Footer
+\cfoot{\small Page \thepage\ of \pageref{LastPage}}
+
+% Rules
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Make the title page use the same footer style
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \cfoot{\small Page \thepage\ of \pageref{LastPage}}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+% ==============================================================================
+% LISTS
+% ==============================================================================
+
+\usepackage{enumitem}
+
+\setlist{
+    topsep=0.5em,
+    partopsep=0pt,
+    itemsep=0.25em,
+    parsep=0pt
+}
+
+\setlist[enumerate]{
+    leftmargin=2em
+}
+
+\setlist[itemize]{
+    leftmargin=2em
+}
+
+% ==============================================================================
+% TABLES
+% ==============================================================================
+
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+
+% Improve vertical spacing in tables
+\renewcommand{\arraystretch}{1.15}
+
+% ==============================================================================
+% MATHEMATICS & TECHNICAL CONTENT
+% ==============================================================================
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% ==============================================================================
+% LINKS, REFERENCES & PDF METADATA
+% ==============================================================================
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+\hypersetup{
+    pdftitle={
+        Bylaws of the Maliyadeva Simulation and Modelling Society
+    },
+    pdfauthor={
+        Maliyadeva Simulation and Modelling Society
+    },
+    pdfsubject={
+        Bylaws and Regulations of the Maliyadeva Simulation and Modelling Society
+    },
+    pdfkeywords={
+        MSMS,
+        Maliyadeva College,
+        Simulation,
+        Modelling,
+        Modeling,
+        Science,
+        Mathematics,
+        Programming,
+        Bylaws
+    },
+    pdfcreator={
+        LaTeX
+    }
+}
+
+\urlstyle{same}
+
+% ==============================================================================
+% TABLE OF CONTENTS
+% ==============================================================================
+
+\usepackage{tocloft}
+
+\setlength{\cftbeforesecskip}{0.35em}
+\setlength{\cftbeforesubsecskip}{0.1em}
+
+% ==============================================================================
+% TYPOGRAPHIC DETAILS
+% ==============================================================================
+
+% Prevent widows and orphans where possible
+\clubpenalty=10000
+\widowpenalty=10000
+
+% Improve page breaking around headings
+\usepackage{needspace}
+
+\begin{document}
+\begin{center}
+    \vspace{-1.5cm}
+    {\LARGE\bfseries BYLAWS}\\[0.6em]
+    {\large Maliyadeva Simulation and Modelling Society (MSMS)}\\[0.4em]
+    {\normalsize Maliyadeva College}
+\end{center}
+\tableofcontents
+
+\section*{Article I - GENERAL PROVISIONS}
+\addcontentsline{toc}{section}{Article I - GENERAL PROVISIONS}
+
+\subsection*{Section 1. Definitions}
+\addcontentsline{toc}{subsection}{Section 1. Definitions}
+For these Bylaws, unless the context otherwise requires:
+\begin{enumerate}
+\item \textbf{College:} Maliyadeva College.
+\item \textbf{EC (EC):} The central governing body of the Society, comprising elected and appointed officers as defined in Article IV.
+\item \textbf{General Assembly (GA):} The collective body of all
+Regular Members of the Society in good standing, constituting the
+General Assembly established under Article IV of the Constitution.
+\item \textbf{Teacher-in-Charge (TIC):} The member(s) of the academic staff appointed by the College administration to provide institutional oversight and advisor guidance to the Society.
+\item \textbf{Financial Year:} The annual operating and accounting cycle of the Society as designated by the EC in agreement with College guidelines.
+\item \textbf{Good Standing:} The status of a member who has fulfilled all registration requirements, maintains active participation, and is not currently subject to disciplinary actions or suspensions under Article X.
+\end{enumerate}
+These Bylaws shall be interpreted in accordance with the Constitution.
+
+\section*{Article II - MEMBERSHIP}
+\addcontentsline{toc}{section}{Article II - MEMBERSHIP}
+
+\subsection*{Section 1. Categories}
+\addcontentsline{toc}{subsection}{Section 1. Categories}
+Membership categories of the Society shall be as prescribed in Article III of the Constitution.
+
+\subsection*{Section 2. Admission}
+\addcontentsline{toc}{subsection}{Section 2. Admission}
+Any eligible student of Maliyadeva College may apply for Associate Membership by submitting the prescribed membership application form. Admission takes effect when Secretary records the new member in the Register.
+
+To be eligible for admission, an applicant must:
+\begin{enumerate}
+  \item Be a currently enrolled student of Maliyadeva College.
+  \item Agree to abide by these Bylaws, the Constitution, and applicable College policies.
+  \item Submit the required membership application.
+\end{enumerate}
+
+\subsection*{Section 3. Progression to Regular Membership}
+\addcontentsline{toc}{subsection}{Section 3. Progression to Regular Membership}
+An Associate Member may apply for promotion to Regular Membership through either of the following pathways:
+\begin{enumerate}
+  \item \textbf{Project Contribution Pathway:} The member's technical contribution is verified and signed off by the Director of Technical Affairs and Projects.
+  \item \textbf{Competition Pathway:} The member's active participation as an official contestant in an EC-approved competition is verified by the relevant Team Leader or the Director of Competitions and Events.
+\end{enumerate}
+Upon verification, the Secretary shall record the member's change of status in the official membership register, at which point the promotion takes effect.
+
+\subsection*{Section 4. Rights and Responsibilities}
+\addcontentsline{toc}{subsection}{Section 4. Rights and Responsibilities}
+
+\paragraph{4.1 Rights}
+The fundamental rights of members shall be as prescribed in Article III of the Constitution.
+
+\paragraph{4.2 Responsibilities}
+Every member of the Society shall:
+\begin{enumerate}
+  \item \textbf{Compliance:} Comply with these Bylaws and all applicable policies of Maliyadeva College.
+  \item \textbf{Conduct:} Act in accordance with the Society's Code of Conduct.
+  \item \textbf{Participation:} Fulfill commitments undertaken for Society projects, teams, or committees.
+  \item \textbf{Integrity:} Maintain academic and technical integrity in all Society work.
+  \item \textbf{Resource Management:} Use Society and College resources responsibly.
+  \item \textbf{Representation:} Refrain from improperly misrepresenting the Society or its positions.
+  \item \textbf{Cooperation:} Cooperate with legitimate Society procedures and officer decisions.
+\end{enumerate}
+
+\subsection*{Section 5. Termination}
+\addcontentsline{toc}{subsection}{Section 5. Termination}
+Cessation and termination of membership shall be governed by Article III, Section 4 of the Constitution and Membership Regulations, subject to applicable Maliyadeva College policies.
+
+\section*{Article III - GENERAL ASSEMBLY}
+\addcontentsline{toc}{section}{Article III - GENERAL ASSEMBLY}
+The composition of the General Assembly and its principal powers
+shall be as prescribed in Article IV of the Constitution.
+
+\subsection*{Section 1. Meetings}
+\addcontentsline{toc}{subsection}{Section 1. Meetings}
+The Society shall hold at least one Annual General Meeting (AGM) per academic year to elect officers, review executive and financial reports, and establish priorities for the upcoming year.
+
+Extraordinary meetings may be called by a simple majority vote of the Executive Committee or by a written petition signed by at least one-third of the Regular Members. The Secretary shall issue official notice for any General Assembly at least 7 days in advance.  The agenda shall be
+circulated at least 24 hours in advance.
+submitted in accordance with this Section. The President, or the Vice President in their absence, shall preside over the meeting.
+
+
+\subsection*{Section 2. Quorum}
+\addcontentsline{toc}{subsection}{Section 2. Quorum}
+A quorum consists of a simple majority of all Regular Members in good standing. If a quorum is not met, the meeting shall be adjourned and rescheduled by the Executive Committee.
+
+
+\subsection*{Section 3. Voting}
+\addcontentsline{toc}{subsection}{Section 3. Voting}
+Each Regular Member is entitled to one vote on any matter submitted to the General Assembly. Associate and Honorary Members do not possess voting rights.
+
+\subsection*{Section 4. Resolutions}
+\addcontentsline{toc}{subsection}{Section 4. Resolutions}
+
+Any Regular Member may submit a motion for consideration by providing it in writing to the Secretary at least 3 days before the meeting. The Secretary shall circulate any such motions to
+Regular Members as soon as reasonably practicable. Such motions shall be included in the agenda and shall be adopted by a simple majority vote, provided they do not attempt to bypass formal amendment procedures for the Constitution, Bylaws.
+
+\section*{Article IV - EXECUTIVE COMMITTEE}
+\addcontentsline{toc}{section}{Article IV - EXECUTIVE COMMITTEE}
+
+\subsection*{Section 1. Composition}
+\addcontentsline{toc}{subsection}{Section 1. Composition}
+
+The Executive Committee shall consist of:
+\begin{enumerate}[leftmargin=*]
+    \item President;
+    \item Secretary;
+    \item Vice President;
+    \item Treasurer;
+    \item Director of Technical Affairs and Projects;
+    \item Director of Competitions and Events;
+    \item Communications Officer;
+    \item Membership and Outreach Officer; and
+    \item two Executive Officers.
+\end{enumerate}
+
+\subsection*{Section 2. Powers}
+\addcontentsline{toc}{subsection}{Section 2. Powers}
+The EC shall serve as the primary executive and operational body of the Society and shall have the authority to:
+\begin{enumerate}
+  \item \textbf{Operations and Activities:} Plan, organize, approve, and direct all Society operations, projects, competitions, publications, and events.
+  \item \textbf{Delegation and Structure:} Establish ad-hoc committees, project teams, and competition squads, delegating specific operational duties as required. Where an officer is temporarily unavailable or unable to perform a duty, the EC may temporarily delegate that duty to another officer or eligible member, subject to the limits of the delegated authority.
+  \item \textbf{Financial and Administrative Control:} Manage Society funds, physical assets, and membership records in accordance with the approved budget, these Bylaws, and College policies.
+  \item \textbf{General Enforcement:} Enforce compliance with the Constitution, Bylaws, and Code of Conduct, exercising ordinary administrative authority not specifically reserved for the General Assembly.
+\end{enumerate}
+
+\subsection*{Section 3. Meetings}
+\addcontentsline{toc}{subsection}{Section 3. Meetings}
+The EC shall meet regularly during the academic year. Regular meetings shall be convened by the Secretary in consultation with the President, or upon the written request of a majority of EC members.
+
+\begin{enumerate}
+  \item \textbf{Notice:} The Secretary shall issue a meeting notice and agenda at least three (3) days in advance. Emergency meetings require at least 24 hours' notice.
+  \item \textbf{Chairing:} Meetings shall be chaired by the President or, in their absence, the Vice President.
+  \item \textbf{Minutes:} The Secretary shall record minutes, attendance, and resolutions for confirmation at the following meeting.
+\end{enumerate}
+
+\noindent
+The EC may make decisions by written resolution without a formal meeting. A written resolution requires the approval of a simple majority or three of all currently seated EC members, whichever is smaller. Approval may be conducted electronically provided the identity of each voting member and the final result are logged by the Secretary. Informal discussions or general communications shall not, by themselves, constitute a formal EC decision.
+
+\subsection*{Section 4. Quorum}
+\addcontentsline{toc}{subsection}{Section 4. Quorum}
+Quorum for EC meetings shall consist of three (3) officers or a simple majority of currently seated officers (whichever is smaller), provided at least the President or the Secretary is present.
+
+If quorum is not met within a reasonable timeframe, or if quorum is lost during a meeting, substantive business shall be suspended and the meeting adjourned.
+
+\subsection*{Section 5. Vacancies and Succession}
+\addcontentsline{toc}{subsection}{Section 5. Vacancies and Succession}
+
+\paragraph{Elective Vacancies}
+Where a permanent vacancy occurs in an elective office, the EC shall convene an Extraordinary General Assembly to hold a by-election, unless the next AGM is scheduled within 60 days. The EC may appoint an eligible Regular Member as an Acting Officer until the by-election.
+
+\paragraph{Non-Elective Vacancies}
+Vacancies in non-elective or appointed positions shall be filled directly by EC appointment for the remainder of the term.
+
+\paragraph{Presidential Succession}
+If the office of President becomes vacant, the Vice President shall serve as Acting President until a successor is elected.
+\paragraph{Acting Officers}
+Acting Officers exercise authority only to the extent necessary to maintain operational continuity and serve strictly until a permanent successor assumes office.
+
+\section*{Article V - OFFICERS}
+\addcontentsline{toc}{section}{Article V - OFFICERS}
+
+\subsection*{Section 1. President}
+\addcontentsline{toc}{subsection}{Section 1. President}
+The President shall serve as the chief executive of the Society, with the responsibility and authority to:
+\begin{enumerate}
+  \item \textbf{Leadership and Coordination:} Provide overall direction and leadership to the Society, coordinate the work of the EC, promote effective cooperation, direct officers in the implementation of their duties, and assign temporary operational tasks within the limits of these Bylaws.
+  \item \textbf{Meetings and Implementation:} Preside over meetings of the General Assembly and EC, coordinate the implementation of duly adopted decisions, and address urgent operational matters where immediate action is reasonably necessary.
+  \item \textbf{Representation:} Represent the Society in official dealings with the College, external organisations, sponsors, and partners, and in routine official matters within the authority granted by these Bylaws or the EC, subject to applicable College policies.
+  \item \textbf{Oversight and Reporting:} Monitor the overall progress of Society programmes, projects, and competitions; request necessary reports or information from officers and committees; and present, or cause to be presented, the Annual Executive Report and Annual Financial Report to the Annual General Meeting.
+\end{enumerate}
+
+\subsection*{Section 2. Secretary}
+\addcontentsline{toc}{subsection}{Section 2. Secretary}
+The Secretary shall oversee the administration, procedural compliance, and official records of the Society, with the responsibility and authority to:
+\begin{enumerate}
+  \item \textbf{Meetings and Communications:} Coordinate the convening of meetings, issue required notices, prepare agendas, receive motions, ensure applicable notice periods are observed, and advise the General Assembly and EC on procedural requirements. Conduct and issue official administrative communications, notices, and decisions authorised by the GA or EC.
+  \item \textbf{Administrative Authority and Records:} Exercise authority over official administrative affairs, correspondence, and procedural processes. Maintain official copies of the Constitution, Bylaws, Regulations, and membership/officer registers. Certify copies or extracts of Society records as true records, and support the orderly transfer of accounts, access, and ongoing administrative matters between administrations.
+  \item \textbf{Oversight and Compliance:} Facilitate the communication and implementation of decisions. Request from any officer or committee information reasonably necessary for record-keeping, administration, or determining procedural compliance. Require that a proposed or adopted EC decision be referred back for review where the Secretary reasonably believes it is inconsistent with governing instruments or College policy.
+  \item \textbf{Limitations:} The Secretary shall not, solely by virtue of office, alter the substance of a resolution or decision when recording or issuing it, nor refuse to record or communicate a lawful decision solely because the Secretary disagrees with it.
+\end{enumerate}
+
+\subsection*{Section 3. Vice President}
+\addcontentsline{toc}{subsection}{Section 3. Vice President}
+The Vice President shall support the general administration of the Society, with the responsibility and authority to:
+\begin{enumerate}
+  \item \textbf{Executive Support and Implementation:} Assist the President in executive leadership, monitor the implementation and progress of EC decisions and projects, and exercise authority delegated by the President or EC within the scope of that delegation.
+  \item \textbf{Coordination and Programmes:} Facilitate coordination among officers and project teams, and lead major initiatives assigned by the EC. Resolve ordinary coordination difficulties, referring substantive disputes, financial, or governance matters to the appropriate authority. Request reasonable progress updates concerning matters within their responsibilities.
+  \item \textbf{Acting Presidency:} Act as President, and exercise the authority of the President, when the President is absent or unable to perform the functions of the office, subject to the same limitations and accountability applicable to the President.
+\end{enumerate}
+
+\subsection*{Section 4. Treasurer}
+\addcontentsline{toc}{subsection}{Section 4. Treasurer}
+The Treasurer shall have authority over the financial administration and financial control of the Society, with the responsibility and authority to:
+\begin{enumerate}
+  \item \textbf{Financial Records, Assets and Banking:} Maintain accurate and up-to-date records of the Society's income, expenditure, assets, liabilities, balances, and supporting documentation. Maintain or oversee the Society's approved banking and accounting arrangements. At the end of the term, transfer all financial records, account information, and assets to the successor.  Maintain a register of Society financial
+assets and property and coordinate with relevant officers regarding
+their custody and handover.
+  \item \textbf{Budgeting and Reporting:} Prepare the annual budget in consultation with the EC, present to the General Assembly for approval, monitor actual expenditure against the approved budget, and prepare or review financial estimates for Society projects, competitions, workshops, events, and other programmes, and advise the EC on their financial feasibility. Prepare the annual Financial Report and bring suspected irregularities, unauthorised expenditure, significant budget deviations, and material financial risks to the attention of the EC.
+  \item \textbf{Funds and Expenditure Control:} Receive or oversee the receipt of Society funds and ensure they are properly safeguarded. Require officers, committees, project teams, or persons incurring expenditure or handling Society funds to provide reasonably necessary financial information and supporting documentation.
+  \item \textbf{Oversight and Suspension Power:} Verify that expenditure is properly authorised and supported. The Treasurer may refuse or suspend the processing of a financial transaction where there are reasonable grounds to believe that the transaction lacks required authorisation, exceeds an applicable financial limit, is inconsistent with an approved budget or governing instrument, or lacks required supporting documentation. The Treasurer shall decline to process such transactions and inform the relevant authority of the deficiency.
+\end{enumerate}
+
+\subsection*{Section 5. Director of Technical Affairs and Projects}
+\addcontentsline{toc}{subsection}{Section 5. Director of Technical Affairs and Projects}
+The Director of Technical Affairs and Projects shall oversee the technical and computational work of the Society, with the responsibility and authority to:
+\begin{enumerate}
+  \item \textbf{Technical Direction and Planning:} Set and guide the technical direction of Society projects in accordance with EC objectives. Determine the technical approach, establish work plans, milestones, and deadlines, and assign technical tasks within approved projects. Evaluate proposed technical projects and advise the EC on feasibility, requirements, risks, and resource needs.
+  \item \textbf{Project Coordination and Capability:} Coordinate the Society's modelling, simulation, computational, and programming projects with Project Leads. Identify technical skills required by members, facilitate training and knowledge transfer, and recommend or organise technical learning activities. Reorganise technical work where reasonably necessary, provided it does not alter an approved project's material scope or financial commitments.
+  \item \textbf{Technical Standards and Assessment:} Establish, maintain, and monitor technical standards. Review the technical quality of projects, models, code, and outputs. Assess and certify the technical readiness of a project or output. Require modification, correction, or further review of technical work that does not satisfy requirements, referring serious deficiencies to the EC.
+  \item \textbf{Infrastructure and Representation:} Maintain, administer, and develop the Society's website, source repositories, deployment configuration, and technical infrastructure (coordinating content with the Communications Officer). Represent the Society in technical matters when authorised.
+  \item \textbf{Limitations:} The Director's technical authority shall not extend to authorising any financial commitment, institutional obligation, external commitment, or other matter reserved to the EC, General Assembly, or Treasurer.
+\end{enumerate}
+
+\subsection*{Section 6. Director of Competitions and Events}
+\addcontentsline{toc}{subsection}{Section 6. Director of Competitions and Events}
+The Director of Competitions and Events shall manage the operational execution of Society events, with the responsibility and authority to:
+\begin{enumerate}
+  \item \textbf{Competitions and Events Administration:} Coordinate the Society's participation in external competitions and plan Society-organised events, exhibitions, and academic programmes. Identify and reporting suitable opportunities; Make operational arrangements, manage registrations, coordinate participants, travel, logistics, contingency plans, participation records, and post-event follow-up. Monitor practical execution and report operational issues to the appropriate authority.
+  \item \textbf{Operational Authority and Communication:} Make ordinary administrative and operational decisions within the authority of the office without separate EC approval for each matter, provided they align with approved decisions, financial requirements, and College policies. Communicate and liaise with external organisers, venues, speakers, judges, and service providers for approved activities.
+  \item \textbf{Coordination and Limitations:} Coordinate with the Director of Technical Affairs and Projects regarding technical requirements and readiness, but shall not exercise technical authority assigned to that office. The Director’s authority shall not extend to matters reserved to the GA, EC, Treasurer, Secretary, or other authorised bodies.
+\end{enumerate}
+
+\subsection*{Section 7. Communications Officer}
+\addcontentsline{toc}{subsection}{Section 7. Communications Officer}
+The Communications Officer shall manage the public presence of the Society, with the responsibility and authority to:
+\begin{enumerate}
+  \item \textbf{Public Communications and Channels:} Manage and develop public-facing communication channels (social media, website). Prepare, publish, and distribute publicity, promotional materials, newsletters, and announcements concerning approved Society activities and technical work, ensuring they accurately reflect duly authorised decisions. Maintain and facilitate the handover of communication assets and credentials.
+  \item \textbf{External Enquiries and Media:} Handle routine external enquiries received through official channels, conduct ordinary external communications with media and external audiences, and coordinate appropriate publicity. Refer matters requiring substantive technical, financial, or governance decisions to the appropriate officer.
+  \item \textbf{Limitations:} The Communications Officer shall not create or alter Society policy, represent an unauthorised position as official, enter into contracts, establish external partnerships, make financial/institutional commitments, or publish information that knowingly contradicts approved decisions or materially alters substantive information supplied by responsible officers.
+\end{enumerate}
+
+\subsection*{Section 8. Membership and Outreach Officer}
+\addcontentsline{toc}{subsection}{Section 8. Membership and Outreach Officer}
+The Membership and Outreach Officer shall foster member engagement and external opportunities, with the responsibility and authority to:
+\begin{enumerate}
+  \item \textbf{Membership Engagement and Support:} Monitor member participation, identify barriers or trends, and gather member feedback to communicate to the EC. Welcome and orient new members. Recommend membership and outreach initiatives. Maintain appropriate records of outreach activities for administrative handovers.
+  \item \textbf{Opportunities and Coordination:} Identify and communicate opportunities for participation and progression to Regular Membership. Coordinate with the Directors of Competitions and Technical Affairs to facilitate member participation. Assist the Secretary with membership administration information (without assuming responsibility for the official register).
+  \item \textbf{Outreach and External Support:} Identify and research potential sponsors and external support sources. Make initial contact using approved information, communicate approved sponsorship needs, report developments to the EC, and coordinate further discussions with the appropriate officers.
+  \item \textbf{Limitations:} The Membership and Outreach Officer shall not, solely by virtue of the office, promise or commit the Society to sponsorship benefits, agree to sponsorship terms, sign agreements, accept sponsorship on behalf of the Society, or make financial, contractual, or institutional commitments.
+\end{enumerate}
+
+\subsection*{Section 9. Executive Officers}
+\addcontentsline{toc}{subsection}{Section 9. Executive Officers}
+The Executive Officers shall provide flexible operational capacity, with the responsibility and authority to:
+\begin{enumerate}
+  \item \textbf{Operational and Executive Support:} Assist the EC in administration and undertake responsibilities, projects, or tasks assigned or delegated by the EC. Support other officers and committees where additional executive capacity is required. Exercise delegated authority within the limits of that delegation.
+  \item \textbf{Representation and Acting Functions:} Represent the broader Regular Membership within the EC and bring relevant perspectives to its attention. Serve as an Acting Officer and exercise the powers of a vacant or temporarily unavailable office when formally designated by the EC.
+\end{enumerate}
+
+\subsection*{Section 10. General Duties and Accountability of Officers}
+\addcontentsline{toc}{subsection}{Section 10. General Duties and Accountability of Officers}
+
+\paragraph{10.1 General Duties}
+All Officers of the EC shall:
+\begin{enumerate}
+  \item Attend EC meetings regularly, participate in decision-making, and provide reasonable notice when unable to attend.
+  \item Perform the duties of their office and exercise delegated authority responsibly, with reasonable care, diligence, and judgement.
+  \item Comply with the Constitution, Bylaws, Regulations, other governing instruments, and applicable College requirements.
+  \item Respect authority boundaries by not exercising authority reserved to another officer, body, or the General Assembly, nor altering decisions of those bodies.
+  \item Provide information and reasonable assistance required for other officers to perform their duties and coordinate where responsibilities overlap.
+  \item Promptly report problems, risks, conflicts, delays, or other matters requiring EC attention.
+  \item Maintain records relevant to their portfolio and ensure that important information, credentials, contacts, and ongoing work can be properly transferred to a successor.
+\end{enumerate}
+
+\paragraph{10.2 Accountability}
+Each officer shall be accountable to the EC for the proper performance of their duties and the proper exercise of authority assigned or delegated to them.
+\begin{enumerate}
+  \item \textbf{Protection from Liability:} An officer shall not be personally responsible for outcomes, acts, omissions, errors, or information originating from circumstances or persons beyond the officer's reasonable control, provided that the officer has acted with reasonable care and in accordance with the governing instruments of the Society.
+  \item \textbf{Review of Decisions:} Any decision made by an officer in the exercise of authority under these Bylaws or authority delegated by the EC may be reviewed by the EC, which may take any action within its authority.
+  \item \textbf{Acting Capacity:} Where an officer is formally designated to act in another office, the officer shall, for the duration and scope of that designation, be fully accountable for the proper performance and exercise of the duties and authority of that office.
+\end{enumerate}
+
+\subsection*{Section 11. Dual Office Holding}
+\addcontentsline{toc}{subsection}{Section 11. Dual Office Holding}
+A member may hold a maximum of two Executive Committee offices simultaneously, but shall retain only a single vote in all proceedings. To ensure proper separation of duties, no member may concurrently hold the following combinations of offices:
+\begin{enumerate}
+  \item President and Secretary;
+  \item President and Vice President;
+  \item Treasurer and any other EC office; and
+  \item Executive Officer and any other EC office.
+\end{enumerate}
+
+\subsection*{Section 12. Term of Office}
+\addcontentsline{toc}{subsection}{Section 12. Term of Office}
+Officers shall serve until their successors are elected or appointed, unless they resign, are removed, or otherwise cease to hold office earlier. An officer elected or appointed to fill a vacancy shall serve only for the remainder of the original term.
+
+\section*{Article VI - ELECTIONS AND APPOINTMENTS}
+\addcontentsline{toc}{section}{Article VI - ELECTIONS AND APPOINTMENTS}
+
+\subsection*{Section 1. Nomination and Election Timing}
+\addcontentsline{toc}{subsection}{Section 1. Nomination and Election Timing}
+The Committee shall be elected at a General Meeting from eligible Regular Members of the Society. Candidates shall self-nominate or be nominated by eligible members, provided they consent to their nomination.
+
+\subsection*{Section 2. Eligibility and Oversight}
+\addcontentsline{toc}{subsection}{Section 2. Eligibility and Oversight}
+To stand for election, a candidate must be a Regular Member in good standing. The Secretary shall verify eligibility. If the Secretary is a candidate for a position, the Teacher-in-Charge (TIC) shall oversee that specific election process and verify eligibility to ensure impartiality.
+
+\subsection*{Section 3. Voting and Counting Procedure}
+\addcontentsline{toc}{subsection}{Section 3. Voting and Counting Procedure}
+Elections shall be conducted by secret ballot. Each eligible member present shall receive one ballot for each contested position.
+\begin{enumerate}
+    \item Uncontested positions shall be filled automatically without a ballot.
+    \item The votes for contested positions shall be counted by the Secretary and at least one other member appointed by the meeting. Candidates shall not count votes for any position for which they are standing.
+    \item The candidate receiving the highest number of valid votes shall be elected.
+    \item If a tie occurs, a further ballot shall be held between the tied candidates. If the tie remains unresolved, the matter shall be referred immediately to the TIC.
+\end{enumerate}
+
+\subsection*{Section 4. Declaration and Records}
+\addcontentsline{toc}{subsection}{Section 4. Declaration and Records}
+The election results shall be recorded in the official minutes of the meeting, announced to the General Assembly, and reported to the TIC. The newly elected officers shall assume their roles upon the conclusion of the election proceedings.
+
+\subsection*{Section 5. Appointments}
+\addcontentsline{toc}{subsection}{Section 5. Appointments}
+
+The EC may create and fill non-elected positions, such as subcommittees or project leads, as needed to conduct Society activities. These appointees report directly to the EC and do not hold voting rights in the EC unless explicitly granted elsewhere in these Bylaws.
+
+\subsection*{Section 6. Removal from Office}
+\addcontentsline{toc}{subsection}{Section 6. Removal from Office}
+An elected officer may be removed by the General Assembly for severe misconduct, substantial violation of Society or College policies, or persistent failure to perform their duties.
+
+Removal requires an affirmative vote from at least three-fourths of the Regular Members present, with a quorum of a simple majority of all Regular Members in good standing. The officer in question cannot vote on their own removal and must be given written notice of the grounds. Preliminary investigations for removal shall be conducted in
+accordance with the procedures applicable to disciplinary matters under
+Article X and subject to the procedural safeguards established by this
+Constitution and the Bylaws.
+
+\section*{Article VII - COMMITTEES AND SUBCOMMITTEES}
+\addcontentsline{toc}{section}{Article VII - COMMITTEES AND SUBCOMMITTEES}
+
+\subsection*{Section 1. Establishment and Types}
+\addcontentsline{toc}{subsection}{Section 1. Establishment and Types}
+The Executive Committee (EC) or the General Assembly may establish committees by resolution to support the objectives and operations of the Society.
+
+\begin{enumerate}
+  \item \textbf{Standing Committees:} Established for continuing, multi-term administrative or technical functions.
+  \item \textbf{Ad-hoc Committees:} Established for specific, time-bound tasks, projects, or events, automatically dissolving upon completion of their objective.
+\end{enumerate}
+
+The establishing resolution shall define the committee's name, purpose, delegated scope, duration, and reporting structure.
+
+\subsection*{Section 2. Membership and Composition}
+\addcontentsline{toc}{subsection}{Section 2. Membership and Composition}
+Unless otherwise specified in the establishing resolution, the EC shall appoint the Chair and members of each committee based on relevant skills and interest.
+
+Both Regular Members and Associate Members may serve on committees. Service on a committee does not confer EC voting rights or eligibility for elected office.
+
+\subsection*{Section 3. Powers and Limitations}
+\addcontentsline{toc}{subsection}{Section 3. Powers and Limitations}
+Committee appointment confers only the specific authority granted in the establishing resolution. Committees do not hold independent governance powers, cannot make binding external commitments, and may not authorize financial expenditures without prior EC approval.
+
+\subsection*{Section 4. Accountability and Oversight}
+\addcontentsline{toc}{subsection}{Section 4. Accountability and Oversight}
+The committee Chair is responsible for coordinating activities, maintaining records of meetings and progress, and submitting these records to the Secretary.
+
+\begin{enumerate}
+  \item \textbf{Reporting:} The Chair shall provide progress updates to the EC as required and immediately report any operational issues, conflicts, or safety concerns.
+  \item \textbf{Oversight:} The EC retains ultimate authority over all committees and may review, modify, suspend, or dissolve any committee at any time.
+  \item \textbf{Protection:} Committee members acting in good faith within their delegated authority shall not be held personally responsible for routine operational outcomes.
+\end{enumerate}
+
+\section*{Article VIII - FINANCIAL ADMINISTRATION}
+\addcontentsline{toc}{section}{Article VIII - FINANCIAL ADMINISTRATION}
+
+\subsection*{Section 1. Society Funds and Banking}
+\addcontentsline{toc}{subsection}{Section 1. Society Funds and Banking}
+All funds raised or received by the Society shall be used strictly to advance the educational and technical objectives of the Society.
+
+In accordance with College policies and applicable regulations, all Society funds shall be deposited into and maintained within an official bank account or financial arrangement designated and authorized by Maliyadeva College administration.
+
+Under no circumstances shall Society funds be deposited into, routed through, or held in any personal bank account, private digital wallet, or unofficial financial setup.
+
+\subsection*{Section 2. Cash Custody and Receipting}
+\addcontentsline{toc}{subsection}{Section 2. Cash Custody and Receipting}
+The Treasurer shall hold custody of unbanked funds and ensure all receipts and deposits are processed in accordance with the Financial Regulations.
+
+\subsection*{Section 3. Annual Budget}
+\addcontentsline{toc}{subsection}{Section 3. Annual Budget}
+The Treasurer shall prepare an annual budget outlining anticipated income, operational costs, project expenses, and contingency provisions for the academic year.
+
+The proposed budget shall be reviewed by the Executive Committee (EC) and submitted to the General Assembly for approval at the Annual General Meeting. Once approved, the budget shall be submitted to the Teacher-in-Charge (TIC) and College authorities for formal alignment with college requirements.
+
+\subsection*{Section 4. Expenditure and Authorisation}
+\addcontentsline{toc}{subsection}{Section 4. Expenditure and Authorisation Framework}
+Expenditures shall be executed strictly for legitimate Society purposes in accordance with the approved budget and College regulations. Spending authority is structured as follows:
+
+\begin{enumerate}
+  \item \textbf{Routine Portfolio Expenses:} Expenditures within an approved project budget below the internal threshold specified in the Financial Regulations may be authorized by the relevant Portfolio Officer.
+  \item \textbf{Executive Authorization:} Expenditures exceeding individual portfolio limits up to the TIC Approval Threshold require joint approval by the President and Treasurer.
+  \item \textbf{TIC and College Approval:} Any transaction, unbudgeted expenditure, contract, or bank withdrawal exceeding the TIC Approval Threshold prescribed in the Financial Regulations requires the prior written approval and countersignature of the Teacher-in-Charge (TIC).
+  \item \textbf{General Assembly Approval:} Any expenditure exceeding the GA Approval Threshold prescribed in the Financial Regulations, or any mid-year amendment to the approved annual budget, must be passed by a majority vote at a General Assembly before funds may be committed or disbursed.
+  \item \textbf{Prohibition of Splitting:} Splitting a single expense into multiple smaller transactions to evade authorization thresholds is strictly prohibited.
+\end{enumerate}
+
+\subsection*{Section 5. Financial Records and Audit}
+\addcontentsline{toc}{subsection}{Section 5. Financial Records and Audit}
+The Treasurer shall maintain accurate and up-to-date financial records
+and supporting documentation sufficient to account for all Society
+income, expenditure, assets, liabilities, and other financial
+transactions. Financial records and supporting documentation shall be maintained in
+accordance with the Financial Regulations and applicable College
+requirements.
+
+All financial records remain the property of the Society and shall be made available upon request for inspection by the Teacher-in-Charge (TIC), Executive Committee, or College administration.
+
+The Treasurer shall present a financial summary to the EC at least once per academic term and submit a comprehensive Annual Financial Report at the AGM.
+
+\section*{Article IX - ACTIVITIES AND EXTERNAL RELATIONS}
+\addcontentsline{toc}{section}{Article IX - ACTIVITIES AND EXTERNAL RELATIONS}
+
+\subsection*{Section 1. Society Activities}
+\addcontentsline{toc}{subsection}{Section 1. Society Activities}
+ The Society may organize, conduct, and participate in any educational, technical, competitive, or community activity that directly advances the official objectives of the Society, provided such activities comply with these Bylaws and all College regulations.
+\subsubsection*{Prohibited Activities}
+The Society shall not conduct or participate in activities that are:
+\begin{enumerate}
+ \item Fundamentally unrelated to its core objectives.
+
+  \item In violation of applicable law or College regulations.
+
+    \item Utilizing Society resources for private purposes.
+
+    \item Involving political campaigning or partisan activity.
+
+    \item Deemed by the Teacher-in-Charge (TIC) to present an unacceptable safety risk.
+\end{enumerate}
+
+\subsubsection*{Proposal and Authorisation}
+Any member or the TIC may submit an activity proposal to the Secretary, who shall route it to the appropriate portfolio officer. The portfolio officer conducts the initial review and may approve the activity if it falls entirely within their delegated authority.
+
+If the proposed activity exceeds the officer's authority, involves external parties, requires unbudgeted financial commitments, or mandates College supervision, it must be escalated to the TIC for approval.
+
+\subsubsection*{College Authority}
+All activities must strictly comply with College safety, venue, and operational policies. No officer or lead shall make commitments on the assumption that pending College approval will be granted.
+
+\subsection*{Section 2. Competitions and Projects}
+\addcontentsline{toc}{subsection}{Section 2. Competitions and Projects}
+\subsubsection*{Competitions}
+The Society may establish teams to participate in external competitions. Where participation is limited, the Director of Competitions and Events shall establish fair, transparent selection criteria (evaluating relevant skills, experience, and reliability) and oversee the selection process.
+
+\subsubsection*{Projects}
+\paragraph{Project Teams} The EC may authorize project teams for technical, academic, or research purposes. The EC shall designate a Project Lead to coordinate tasks, monitor progress, and ensure alignment with the approved scope. Any eligible member may join a project team, subject to the Project Lead’s discretion and any conditions set by the EC.
+
+\paragraph{Ownership of Project Outputs}
+Subject to applicable law and College policies, intellectual property created by a member during a Society project remains with its creator(s).
+
+The Society retains a non-exclusive right to archive, reproduce, display, and use project outputs for legitimate educational, exhibition, and institutional purposes. The Society shall appropriately acknowledge the creators and contributors of all project outputs. Where projects are conducted under specific external sponsorships or partnerships, the IP terms of that specific agreement shall govern.
+
+\paragraph{External Collaboration}
+Project teams may engage external professionals, researchers, or mentors where beneficial.
+
+\paragraph{Approval of Project Submissions}
+Formal technical outputs submitted or published externally in the name of the Society shall be subject to technical review in accordance with procedures established by the Director of Technical Affairs and Projects. Such review shall ensure alignment with Society standards and shall not constitute authorisation of financial or contractual commitments.
+
+\subsection*{Section 3. Partnerships and Sponsorships}
+\addcontentsline{toc}{subsection}{Section 3. Partnerships and Sponsorships}
+\subsubsection*{General Principles}
+The Society may establish external partnerships or accept sponsorships provided they align with the Society's objectives, comply with College policies, and do not compromise the independence or academic integrity of the Society.
+
+\subsubsection*{Approval}
+No officer or member may establish a partnership or accept a sponsorship without prior approval.
+
+Standard sponsorships and operational partnerships require the approval of the EC and TIC.
+
+Any partnership that creates a multi-year obligation, requires exclusive rights, or incurs institutional liability must be approved by the TIC and the General Assembly.
+
+\subsubsection*{Financial Accountability}
+All sponsorship funds and in-kind contributions must be recorded by the Treasurer, used strictly for their approved purpose, and detailed in the annual Financial Report. The TIC reserves the right to terminate any external relationship that becomes inconsistent with Society or College policies.
+
+\subsection*{Section 4. Use of Society Property and Identity}
+\addcontentsline{toc}{subsection}{Section 4. Use of Society Property and Identity}
+\subsubsection*{Society Property}
+All equipment, funds, domains, software, repositories, and official social media/email accounts created or acquired for the Society remain the exclusive property of the Society. They are not the personal property of the members who administer them.
+
+\subsubsection*{Society Branding}
+The Society’s name, logo, and visual identity may only be used for legitimate, authorized Society purposes. No member may use the Society's branding to imply endorsement or partnership without EC approval. Furthermore, the Society's branding does not equate to the official branding of Maliyadeva College, and the use of the College crest or name must follow strict College guidelines.
+
+
+\subsubsection*{Handover and Continuity}
+Upon the conclusion of a term, project, or upon vacating an office, all outgoing officers and members must promptly transfer all physical assets, digital files, account credentials, and administrative access to the incoming officer or the Secretary.
+
+\section*{Article X - DISCIPLINE AND ACCOUNTABILITY}
+\addcontentsline{toc}{section}{Article X - DISCIPLINE AND ACCOUNTABILITY}
+
+\subsection*{Section 1. Standards of Conduct}
+\addcontentsline{toc}{subsection}{Section 1. Standards of Conduct}
+
+All members and officers must adhere to the Society’s Code of Conduct, the Constitution, and all applicable Maliyadeva College policies. Members acting in good faith who accidentally breach a purely administrative rule of the Society shall not face disciplinary action, provided the conduct does not violate College policy or general standards of behavior.
+
+\subsection*{Section 2. Complaints}
+\addcontentsline{toc}{subsection}{Section 2. Complaints}
+
+Any person affected by the conduct of a Society member or officer may submit a written complaint to the Secretary. The Secretary shall immediately forward all complaints, disciplinary reviews, and appeals directly to the Teacher-in-Charge (TIC).
+
+\subsection*{Section 3. Determination and Disciplinary Action}
+\addcontentsline{toc}{subsection}{Section 3. Determination and Disciplinary Action}
+
+Upon reviewing the matter referred through the Secretary, the TIC—or the Executive Committee acting under the direct guidance of the TIC—may determine whether a violation has occurred and apply proportionate action, including:
+\begin{enumerate}
+ \item Issuing a formal caution or warning.
+\item Suspending the member's privileges or participation in Society events for a defined period.
+\item Initiating the removal of an elected officer via the General Assembly.
+\item Referring the matter to broader College authorities.
+\end{enumerate}
+
+\subsection*{Section 4. Finality and College Authority}
+\addcontentsline{toc}{subsection}{Section 4. Finality and College Authority}
+
+Any disciplinary decision or appeal handled through this process shall be determined by the TIC, whose decision is final within the Society. Nothing in this Article limits the independent authority of the TIC or Maliyadeva College administrators to directly intervene, and all internal Society proceedings shall entirely defer to official College disciplinary procedures where applicable.
+
+\section*{Article XI - AMENDMENTS}
+\addcontentsline{toc}{section}{Article XI - AMENDMENTS}
+
+\subsection*{Section 1. Amending the Bylaws}
+\addcontentsline{toc}{subsection}{Section 1. Amending the Bylaws}
+Amendments to these Bylaws may be proposed by a resolution of the Executive Committee or by a written petition signed by at least 10 Regular Members, submitted to the Secretary.
+
+The Secretary shall circulate the proposed amendment to all Regular Members at least 7 days prior to the General Assembly meeting where it will be discussed. Approval requires a simple majority vote of the Regular Members present and voting, provided a quorum is met.
+
+\subsection*{Section 2. Effective Date}
+\addcontentsline{toc}{subsection}{Section 2. Effective Date}
+Approved amendments shall take effect immediately upon the conclusion of the General Assembly, unless a later date is specified, and remain subject to any required confirmation by the Teacher-in-Charge or College authorities. Amendments shall not operate retroactively.
+
+\subsection*{Section 3. Amending the Regulations}
+\addcontentsline{toc}{subsection}{Section 3. Amending the Regulations}
+
+Regulations may be adopted, amended, or repealed by a simple majority vote of the General Assembly, following a written proposal by the Executive Committee or at least five (5) Regular Members and a seven-day notice period. Regulations must not conflict with these Bylaws or College policy.
+
+\section*{Article XII - INTERPRETATION AND GOVERNING AUTHORITY}
+\addcontentsline{toc}{section}{Article XII - INTERPRETATION AND GOVERNING AUTHORITY}
+
+\subsection*{Section 1. Interpretation}
+\addcontentsline{toc}{subsection}{Section 1. Interpretation}
+
+The Secretary is responsible for the interpretation and administrative application of these Bylaws, the Financial Regulations, the Code of Conduct, and any other secondary governing documents of the Society.
+
+The Secretary’s interpretation must strictly align with the text of the governing documents and cannot create, alter, or remove any power, duty, or substantive obligation.
+
+If a ruling by the Secretary is disputed, or if an ambiguity cannot be reasonably resolved, the matter shall be referred to the Executive Committee (EC) for a final internal determination. All interpretations remain subject to Article II of the Constitution.
+
+\subsection*{Section 2. Conflicts with School Policies}
+\addcontentsline{toc}{subsection}{Section 2. Conflicts with School Policies}
+Conflicts between the governing instruments of the Society and the
+policies, rules, or requirements of Maliyadeva College shall be
+governed by Article II of the Constitution.
+
+\subsection*{Section 3. Severability}
+\addcontentsline{toc}{subsection}{Section 3. Severability}
+Severability shall be governed by Article II, Section 3 of the Constitution.
+
+\section*{Article XIII - FINAL PROVISIONS}
+\addcontentsline{toc}{section}{Article XIII - FINAL PROVISIONS}
+
+\subsection*{Section 1. Effect and Initial Adoption}
+\addcontentsline{toc}{subsection}{Section 1. Effect and Initial Adoption}
+
+These Bylaws shall take effect upon their approval by the Executive
+Committee and the Teacher-in-Charge pursuant to the transitional authority
+established under Article VII, Section 3 of the Constitution and the Transitional Regulations.
+
+This initial approval mechanism applies strictly to the enactment of the
+Society's foundational Bylaws and shall not establish a continuing power
+of the Executive Committee or Teacher-in-Charge to enact or amend Bylaws
+outside the procedures prescribed in Article XI of these Bylaws.
+
+\subsection*{Section 2. Supersession}
+\addcontentsline{toc}{subsection}{Section 2. Supersession}
+Upon taking effect, these Bylaws supersede and replace all previous bylaws, regulations, and administrative rules of the Society.
+\end{document}

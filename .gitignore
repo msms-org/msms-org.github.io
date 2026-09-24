@@ -1,0 +1,37 @@
+# Jekyll build output
+_site/
+
+# Bundler dependencies
+vendor/bundle/
+
+# Ruby / Bundler local files
+.bundle/
+
+# Jekyll / generated caches
+.jekyll-cache/
+.jekyll-metadata/
+
+# OS/editor files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# TeX auxiliary/build files
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.dvi
+*.4ct
+*.4tc
+*.idv
+*.lg
+*.tmp
+*.xref
+
+# TeX4ht / make4ht generated files
+*.css.tmp

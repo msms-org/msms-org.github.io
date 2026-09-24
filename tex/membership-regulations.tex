@@ -1,0 +1,574 @@
+\documentclass[a4paper]{article}
+
+% ==============================================================================
+% LANGUAGE, ENCODING & FONTS
+% ==============================================================================
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\emergencystretch=2em
+
+% ==============================================================================
+% PAGE LAYOUT
+% ==============================================================================
+\usepackage[
+    a4paper,
+    top=1in,
+    bottom=1in,
+    left=1in,
+    right=1in,
+    headheight=14pt
+]{geometry}
+
+% ==============================================================================
+% DOCUMENT SPACING
+% ==============================================================================
+\usepackage{setspace}
+\usepackage{parskip}
+\setstretch{1.08}
+
+% ==============================================================================
+% SECTION & HEADING FORMATTING
+% ==============================================================================
+\usepackage{titlesec}
+\setcounter{tocdepth}{2}
+
+\titleformat{\section}
+    {\normalfont\Large\bfseries}
+    {}
+    {0pt}
+    {}
+
+\titlespacing*{\section}
+    {0pt}
+    {3.0ex plus 1ex minus .2ex}
+    {1.5ex plus .2ex}
+
+\titleformat{\subsection}
+    {\normalfont\large\bfseries}
+    {}
+    {0pt}
+    {}
+
+\titlespacing*{\subsection}
+    {0pt}
+    {2.5ex plus .7ex minus .2ex}
+    {1.2ex plus .2ex}
+
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries}
+    {}
+    {0pt}
+    {}
+
+\titlespacing*{\subsubsection}
+    {0pt}
+    {2ex plus .5ex minus .2ex}
+    {0.8ex plus .2ex}
+
+% ==============================================================================
+% HEADERS & FOOTERS
+% ==============================================================================
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small\textsc{Maliyadeva Simulation and Modelling Society}}
+\rhead{\small\textsc{Membership Regulations}}
+\cfoot{\small Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \cfoot{\small Page \thepage\ of \pageref{LastPage}}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+% ==============================================================================
+% LISTS
+% ==============================================================================
+\usepackage{enumitem}
+\setlist{
+    topsep=0.5em,
+    partopsep=0pt,
+    itemsep=0.25em,
+    parsep=0pt
+}
+\setlist[enumerate]{leftmargin=2em}
+\setlist[itemize]{leftmargin=2em}
+
+% ==============================================================================
+% LINKS & METADATA
+% ==============================================================================
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+
+\hypersetup{
+    pdftitle={Membership Regulations of the Maliyadeva Simulation and Modelling Society},
+    pdfauthor={Maliyadeva Simulation and Modelling Society},
+    pdfsubject={Membership Regulations},
+    pdfkeywords={MSMS, Membership, Maliyadeva College},
+    pdfcreator={LaTeX}
+}
+\urlstyle{same}
+
+% ==============================================================================
+% TABLE OF CONTENTS
+% ==============================================================================
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{0.35em}
+\setlength{\cftbeforesubsecskip}{0.1em}
+
+% ==============================================================================
+% TYPOGRAPHIC DETAILS
+% ==============================================================================
+\clubpenalty=10000
+\widowpenalty=10000
+\usepackage{needspace}
+
+% ==============================================================================
+% FORM MACROS
+% ==============================================================================
+
+% A labelled field with a ruled line extending to the right margin.
+\newcommand{\formfield}[1]{%
+    \par\noindent
+    \makebox[5.5cm][l]{\textbf{#1}}%
+    \hrulefill
+    \par\vspace{0.7em}%
+}
+
+% A section heading within a form.
+\newcommand{\formsection}[1]{%
+    \par\vspace{0.8em}%
+    \noindent\textbf{\large #1}%
+    \par\vspace{0.1em}%
+    \noindent\rule{\linewidth}{0.4pt}%
+    \par\vspace{0.5em}%
+}
+
+% A form title block.
+\newcommand{\formtitle}[2]{%
+    \begin{center}
+        {\Large\bfseries #1}\\[0.4em]
+        {\normalsize #2}
+    \end{center}
+    \vspace{0.5em}
+}
+
+% A blank ruled line for free-text response.
+\newcommand{\formruleline}{%
+    \par\noindent\rule{\linewidth}{0.4pt}%
+    \par\vspace{0.6em}%
+}
+
+% An authorising officer block.
+\newcommand{\authblock}[1]{%
+    \formsection{#1}
+    \formfield{Name}
+    \formfield{Office held}
+    \formfield{Signature}
+    \formfield{Date}
+}
+
+\begin{document}
+\begin{center}
+    \vspace{-1.5cm}
+    {\LARGE\bfseries MEMBERSHIP REGULATIONS}\\[0.6em]
+    {\large Maliyadeva Simulation and Modelling Society (MSMS)}\\[0.4em]
+    {\normalsize Maliyadeva College}
+\end{center}
+\tableofcontents
+
+% ==============================================================================
+\section*{Section 1. General Provisions}
+\addcontentsline{toc}{section}{Section 1. General Provisions}
+
+\subsection*{1.1 Purpose and Scope}
+This Regulation prescribes the procedures for membership admission,
+registration, progression, termination, and maintenance of the
+Membership Register, and applies to applicants, members, the Executive
+Committee, and the Secretary in the exercise of membership functions.
+
+\subsection*{1.2 Definitions}
+For this Regulation, unless the context otherwise requires:
+\begin{enumerate}
+    \item \textbf{Application Form} means the form in Schedule A.
+    \item \textbf{Progression Form} means the form in Schedule B.
+    \item \textbf{Register} means the Membership Register maintained by
+    the Secretary.
+    \item \textbf{Member ID} means the identifier assigned under
+    Section 3.3.
+\end{enumerate}
+
+\subsection*{1.3 Relationship with Other Instruments}
+This Regulation is subject to the Constitution, Bylaws, other Society
+Regulations, and applicable College requirements. Where a conflict
+arises, the higher-ranking instrument shall prevail.
+
+\subsection*{1.4 Amendment of Schedules}
+The Secretary may, with the approval of the Executive Committee, make
+non-substantive changes to a Schedule, including clerical corrections
+or formatting changes. Substantive changes shall be made in accordance
+with Article XI, Section 3 of the Bylaws.
+
+% ==============================================================================
+\section*{Section 2. Application and Admission}
+\addcontentsline{toc}{section}{Section 2. Application and Admission}
+
+\subsection*{2.1 Application}
+
+An eligible student who wishes to apply for Associate Membership shall
+submit a completed Application Form to the Secretary in physical or
+electronic form.
+
+The Secretary shall acknowledge receipt and record the date of
+submission.
+
+\subsection*{2.2 Verification of Eligibility}
+Upon receipt of an Application Form, the Secretary shall verify that
+the applicant is currently enrolled at Maliyadeva College.
+
+If eligibility cannot be verified, the Secretary shall return the
+application to the applicant with a written explanation.
+
+\subsection*{2.3 Approval}
+Admission may be approved by the Secretary or any other officer authorised by the EC.
+
+\subsection*{2.4 Effective Date of Admission}
+Admission as an Associate Member shall take effect when the Secretary
+records the new member in the Register.
+
+The Secretary shall assign a Member ID under Section 3.3 at the
+time of recording.
+
+% ==============================================================================
+\section*{Section 3. Membership Register}
+\addcontentsline{toc}{section}{Section 3. Membership Register}
+
+\subsection*{3.1 Format}
+The Register shall be maintained in digital form, and shall serve as the primary working record, while the
+physical records shall be authoritative for applications and approvals.
+
+\subsection*{3.2 Digital Register}
+The digital Register shall contain one row per member, with the
+following columns: Member ID, Membership status (Associate / Regular /
+Honorary), Full name, Preferred name, Class, School admissions number,
+Email, WhatsApp number, Date of application, Date of admission, Areas
+of interest, Prior experience, GitHub username, Date progressed to
+Regular Membership (if applicable), Date Honorary Membership conferred
+(if applicable), Date of termination (if applicable), Reason for
+termination (if applicable), Last updated, Updated by, and Notes.
+
+\subsection*{3.3 Member IDs}
+A Member ID shall have the form:
+
+\begin{center}
+\textbf{MSMS-YY-NNNN}
+\end{center}
+
+where:
+\begin{enumerate}
+  \item \textbf{YY} is the two-digit year in which the person first joined the Society; and
+  \item \textbf{NNNN} is a four-digit sequence number assigned in order of first admission.
+\end{enumerate}
+
+A single sequence
+counter shall be maintained per year.
+
+\subsection*{3.4 Status Changes}
+When a member progresses from Associate to Regular Membership, their
+Membership Status attribute shall be updated from Associate to Regular
+in the Register.
+
+When Honorary Membership is conferred on a member, their Membership
+Status attribute shall be updated to Honorary, unless the Bylaws
+expressly permit Honorary Membership to be held concurrently with
+another membership category.
+
+A member's permanent Member ID remains unchanged
+during any status update.
+
+\subsection*{3.5 Accuracy and Updates}
+The Secretary shall keep the Register accurate and up to date. Members
+shall notify the Secretary of changes to their contact or academic
+details within a reasonable time. The Secretary shall record each
+update with the date and the officer making the change.
+
+\subsection*{3.6 Access}
+The following persons may access the Register:
+\begin{enumerate}
+  \item the Secretary;
+  \item the Executive Committee;
+  \item the Teacher-in-Charge;
+  \item the College, on request;
+  \item a member, in respect of their own entry, on request.
+\end{enumerate}
+
+No other person may access the Register without the approval of the
+Executive Committee.
+
+Access shall be subject to any applicable College requirements on
+personal data.
+
+% ==============================================================================
+\section*{Section 4. Progression to Regular Membership}
+\addcontentsline{toc}{section}{Section 4. Progression to Regular Membership}
+
+\subsection*{4.1 Application for Progression}
+An Associate Member who wishes to progress to Regular Membership shall
+notify the Secretary. The notification may be made verbally or in
+writing.
+
+The Secretary shall record the date of the request and shall refer the
+matter to the appropriate verifying officer under Section 4.2 or 4.3.
+
+\subsection*{4.2 Project Contribution Pathway}
+Where the applicant relies on the Project Contribution Pathway, the
+Secretary shall refer the matter to the Director of Technical Affairs
+and Projects.
+
+The Director shall:
+\begin{enumerate}
+  \item review the applicant's contribution to a Society-approved project;
+  \item verify the applicant's comprehension of the relevant code or model, with reference to the code itself; and
+  \item complete and sign the Project Contribution section of the Progression Form.
+\end{enumerate}
+
+\subsection*{4.3 Competition Pathway}
+Where the applicant relies on the Competition Pathway, the Secretary
+shall refer the matter to the relevant Team Leader.
+
+The Team Leader shall confirm that the applicant actively represented
+the Society as an official team member or contestant in a competition
+approved by the Executive Committee, and shall complete and sign the
+Competition section of the Progression Form.
+
+Where there is no Team Leader, or where the Team Leader is the
+applicant, the Director of Competitions and Events shall verify
+participation in place of the Team Leader.
+
+\subsection*{4.4 Recording of Progression}
+Upon receipt of a completed Progression Form, the Secretary shall record the progression in the Register and update the member's status from Associate to Regular.
+
+Progression takes effect when the Secretary records it.
+
+% ==============================================================================
+\section*{Section 5. Honorary Membership}
+\addcontentsline{toc}{section}{Section 5. Honorary Membership}
+
+\subsection*{5.1 Nomination}
+A member of the Executive Committee may nominate an individual for
+Honorary Membership.
+
+\subsection*{5.2 Consideration}
+
+Honorary Membership is conferred by resolution of the Executive
+Committee, in accordance with the Bylaws.
+
+\subsection*{5.3 Recording}
+When Honorary Membership is conferred, the Secretary shall:
+\begin{enumerate}
+  \item record the conferral in the Register; and
+  \item assign a Member ID.
+\end{enumerate}
+
+% ==============================================================================
+\section*{Section 6. Termination}
+\addcontentsline{toc}{section}{Section 6. Termination}
+
+\subsection*{6.1 Voluntary Resignation}
+A member may resign by submitting written notice to the Secretary. Any
+signed and dated written notice is sufficient; no specific form is
+required.
+
+The Secretary shall record the resignation and the effective date in
+the Register, and shall file the notice in the physical Register.
+
+\subsection*{6.2 Loss of Eligibility}
+Membership ceases where a member no longer satisfies the eligibility
+requirements applicable to their category.
+
+The Secretary shall determine loss of eligibility at the start of each
+academic term by reference to the College register, and shall record
+the cessation in the Register.
+
+\subsection*{6.3 Disciplinary Removal}
+Membership may be terminated as a disciplinary sanction under Article X
+of the Bylaws.
+
+Where termination is imposed, the Secretary shall record the cessation
+and shall file the disciplinary decision in the physical Register.
+
+\subsection*{6.4 Termination Record}
+For every cessation of membership, the Secretary shall complete a
+Termination Record stating:
+\begin{enumerate}
+  \item the Member ID and name of the member;
+  \item the ground for cessation;
+  \item the effective date; and
+  \item the officer recording the cessation.
+\end{enumerate}
+
+\subsection*{6.5 Re-application}
+A person whose membership ceased may re-apply as follows:
+\begin{enumerate}
+  \item \textbf{After voluntary resignation} --- the person may re-apply as a new applicant, with no Executive Committee approval required beyond the ordinary admission procedure.
+  \item \textbf{After loss of eligibility} --- the person may re-apply once they again satisfy the eligibility requirements applicable to their category, following the ordinary admission procedure.
+  \item \textbf{After disciplinary removal} --- the person may re-apply only with the prior approval of the Executive Committee.
+\end{enumerate}
+
+Where the original record still exists, the Secretary shall reinstate
+the original Member ID and update their status as necessary. Where
+the original record no longer exists, a new Member ID shall be
+assigned.
+
+% ==============================================================================
+\section*{Section 7. Records and Interpretation}
+\addcontentsline{toc}{section}{Section 7. Records and Interpretation}
+
+\subsection*{7.1 Custody and Retention}
+The Register and all supporting forms shall be maintained by the
+Secretary as part of the official records of the Society.
+
+Records shall be retained for the period prescribed by the Bylaws, the
+Financial Regulations, or applicable College requirements, whichever
+is longer.
+
+\subsection*{7.2 Handover}
+
+Upon a change of Secretary, the outgoing Secretary shall transfer the
+Register, the physical binder, and all related access credentials to
+the incoming Secretary in accordance with the applicable handover
+requirements.
+
+\subsection*{7.3 Interpretation and College Authority}
+This Regulation shall be interpreted in accordance with Article XII of
+the Bylaws. Nothing in this Regulation limits the authority of the
+College.
+
+% ==============================================================================
+\clearpage
+\section*{Schedule A --- Membership Application Form}
+\addcontentsline{toc}{section}{Schedule A --- Membership Application Form}
+
+\formtitle{Membership Application Form}{Maliyadeva Simulation and Modelling Society}
+
+\formsection{Applicant Details}
+\formfield{Full name}
+\formfield{Preferred name}
+\formfield{Class}
+\formfield{School admissions number}
+\formfield{Email address}
+\formfield{WhatsApp number}
+\formfield{Date of application}
+\formfield{Areas of interest}
+\formfield{Prior experience (optional)}
+\formfield{GitHub username (optional)}
+
+\formsection{Declaration}
+\noindent
+I confirm that the information above is accurate, that I am currently
+enrolled at Maliyadeva College, and that I agree to abide by the
+Constitution, the Bylaws, the Code of Conduct, and applicable College
+policies.
+\vspace{1.0em}
+
+\noindent
+\makebox[7cm][l]{\textbf{Signature}}%
+\hrulefill
+\par\vspace{0.9em}
+
+\noindent
+\makebox[7cm][l]{\textbf{Date}}%
+\hrulefill
+
+\vfill
+\begin{center}
+    \small\textit{Schedule A --- Page 1 of 1}
+\end{center}
+
+% ==============================================================================
+\clearpage
+\begingroup
+\small
+\setlength{\parskip}{2pt}
+\renewcommand{\formfield}[1]{%
+    \par\noindent
+    \makebox[5.5cm][l]{\textbf{#1}}%
+    \hrulefill
+    \par\vspace{0.3em}%
+}
+\renewcommand{\formsection}[1]{%
+    \par\vspace{0.4em}%
+    \noindent\textbf{\large #1}%
+    \par\vspace{0.05em}%
+    \noindent\rule{\linewidth}{0.4pt}%
+    \par\vspace{0.25em}%
+}
+\renewcommand{\formtitle}[2]{%
+    \begin{center}
+        {\large\bfseries #1}\\[0.2em]
+        {\small #2}
+    \end{center}
+    \vspace{0.2em}
+}
+\section*{Schedule B --- Progression Verification Form}
+\addcontentsline{toc}{section}{Schedule B --- Progression Verification Form}
+
+\formtitle{Progression Verification Form}{Maliyadeva Simulation and Modelling Society}
+
+\formsection{Member Details}
+\formfield{Member ID}
+\formfield{Full name}
+
+\formsection{Section 1 --- Project Contribution Pathway}
+\formfield{Project name}
+\formfield{Nature of the contribution}
+
+\noindent
+\textbf{Director of Technical Affairs and Projects verification:} I have
+reviewed the relevant code or model and am satisfied that the member
+comprehends it.
+\vspace{0.3em}
+
+\noindent
+\makebox[7cm][l]{\textbf{Director signature}}%
+\hrulefill
+\par\vspace{0.3em}
+\noindent
+\makebox[7cm][l]{\textbf{Date}}%
+\hrulefill
+
+\formsection{Section 2 --- Competition Pathway}
+\formfield{Competition}
+\formfield{Date(s) of participation}
+\formfield{Format (team or individual)}
+\formfield{Role}
+
+\par\vspace{0.25em}\noindent
+\textbf{Team Leader verification:} I confirm that the member actively
+represented the Society as an official team member or contestant in
+the competition named above, which was approved by the Executive
+Committee.
+\par\vspace{0.2em}\noindent
+{\small\textit{(Where there is no Team Leader, or where the Team Leader is the
+applicant, the Director of Competitions and Events verifies instead.)}}
+\vspace{0.3em}
+
+\noindent
+\makebox[7cm][l]{\textbf{Team Leader signature}}%
+\hrulefill
+\par\vspace{0.3em}
+\noindent
+\makebox[7cm][l]{\textbf{Date}}%
+\hrulefill
+
+\vfill
+\endgroup
+
+\end{document}

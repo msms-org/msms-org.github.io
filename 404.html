@@ -1,0 +1,33 @@
+---
+layout: default
+title: Page not found
+description: The page you're looking for doesn't exist.
+---
+
+<div class="wrap">
+  <section class="error-page">
+
+    <p class="eyebrow">404 — Signal lost</p>
+
+    <h1>This page is a dead cell.</h1>
+
+    <p class="lede">
+      A dead cell in Conway's Game of Life comes back when exactly three
+      of its neighbours are alive. This one stayed dead. The address may
+      be wrong, or the page may never have existed.
+    </p>
+
+    <div class="cta">
+      <a class="btn accent" href="{{ '/' | relative_url }}">Back to the front page</a>
+      <a class="btn secondary" href="{{ '/events.html' | relative_url }}">See upcoming sessions</a>
+    </div>
+
+    <div class="error-grid" aria-hidden="true">
+      <span></span><span></span><span class="alive"></span><span></span>
+      <span></span><span class="alive"></span><span></span><span class="alive"></span>
+      <span></span><span></span><span class="alive dying"></span><span></span>
+      <span class="alive"></span><span></span><span></span><span></span>
+    </div>
+
+  </section>
+</div>
