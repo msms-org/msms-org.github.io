@@ -9,6 +9,25 @@
 
 set -euo pipefail
 
+# --- preflight -------------------------------------------------------------
+
+if ! command -v pandoc >/dev/null 2>&1; then
+  cat >&2 <<'EOF'
+error: pandoc is required but not installed.
+
+Install it with one of:
+
+  macOS:          brew install pandoc
+  Debian/Ubuntu:  sudo apt install pandoc
+  Windows:        https://pandoc.org/installing.html
+
+Then re-run this script.
+EOF
+  exit 1
+fi
+
+# --- build -----------------------------------------------------------------
+
 DOCS=(
   constitution
   bylaws
@@ -33,9 +52,10 @@ for name in "${DOCS[@]}"; do
     -f latex \
     -t html5 \
     --wrap=none \
-    --no-highlight \
+    --syntax-highlighting=none \
     --section-divs \
+    --shift-heading-level-by=1 \
     -o "documents/${name}-body.html"
 done
 
-echo "done. documents/*-body.html regenerated."
+echo "done. documents/*-body.html regenerated."cho "done. documents/*-body.html regenerated."
