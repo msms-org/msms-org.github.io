@@ -692,6 +692,10 @@ textarea:focus-visible {
   50%      { opacity: 0.45; transform: scale(0.8); }
 }
 
+.sim-caption em {
+  font-style: normal;
+  color: var(--faint);
+}
 /* ============================================================
    CARDS — generic card grid.
    Colour identifies the subject; it does not fill the card.
