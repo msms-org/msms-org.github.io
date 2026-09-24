@@ -52,7 +52,6 @@ for name in "${DOCS[@]}"; do
     -f latex \
     -t html5 \
     --wrap=none \
-    --syntax-highlighting=none \
     --section-divs \
     --shift-heading-level-by=1 \
     -o "documents/${name}-body.html"
