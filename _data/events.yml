@@ -1,0 +1,51 @@
+# ============================================================
+# EVENTS
+# ------------------------------------------------------------
+# One block per session. Copy a block, edit the values, save.
+# Jekyll sorts by date and splits upcoming vs. past on its own.
+#
+# Fields:
+#   date      required   YYYY-MM-DD
+#   title     required
+#   summary   required   one or two sentences
+#   time      optional   defaults to "3:30–5:00 PM"
+#   location  optional   defaults to "Room 214"
+#   type      optional   Workshop / Open session / Talk / etc.
+#   notes     optional   only shown on the featured event
+#
+# To add: copy any block below and edit it. Order doesn't matter.
+# ============================================================
+
+- date: 2026-01-01
+  title: Intro to simulation + setup night
+  summary: Got Python running, wrote a random walk, argued about seed values.
+  type: Workshop
+
+- date: 2026-10-08
+  title: SIR epidemic model in Python
+  summary: >
+    Build a compartmental model from scratch. Vary R₀ and watch
+    the outbreak curve change shape.
+  type: Workshop
+  notes: Bring a laptop if you have one — we have spares.
+
+- date: 2026-10-15
+  title: Monte Carlo — estimating π and beyond
+  summary: >
+    Random numbers as a computational tool. We'll start with a
+    dartboard and end with a problem that has no closed form.
+  type: Workshop
+
+- date: 2026-10-22
+  title: Traffic flow with cellular automata
+  summary: >
+    The Nagel–Schreckenberg model. Why does a jam appear out of
+    nowhere on an empty road?
+  type: Workshop
+
+- date: 2026-10-29
+  title: Project night — bring your own model
+  summary: >
+    No agenda. Work on whatever you're building, ask for help,
+    or pair up with someone else.
+  type: Open session

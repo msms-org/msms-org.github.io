@@ -3,6 +3,26 @@ title: Events
 description: Upcoming and past sessions from the Maliyadeva Simulation and Modelling Society.
 ---
 
+{%- comment -%}
+  Events are stored in _data/events.yml — edit that file, not this one.
+  This template sorts by date and splits into upcoming vs. past.
+{%- endcomment -%}
+
+{%- assign today = site.time | date: "%s" | plus: 0 -%}
+{%- assign sorted = site.data.events | sort: "date" -%}
+
+{%- assign upcoming = "" | split: "" -%}
+{%- assign past = "" | split: "" -%}
+{%- for event in sorted -%}
+  {%- assign ts = event.date | date: "%s" | plus: 0 -%}
+  {%- if ts >= today -%}
+    {%- assign upcoming = upcoming | push: event -%}
+  {%- else -%}
+    {%- assign past = past | push: event -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign past = past | reverse -%}
+
 <div class="wrap">
 
   <section class="hero">
@@ -16,96 +36,84 @@ description: Upcoming and past sessions from the Maliyadeva Simulation and Model
     </div>
   </section>
 
-  <!-- ============================================================
-       TO ADD AN EVENT:
-       - The FIRST one on this list is the featured "next session"
-         and lives outside the .event-list wrapper as
-         <article class="event event--featured">.
-       - Everything else sits inside <div class="event-list">.
-       - When the featured one passes, move it into Past, remove its
-         `event--featured` class, and promote the next one.
-       ============================================================ -->
-
   <section class="panel panel--sim2">
     <h2>Upcoming</h2>
 
-    <article class="event event--featured">
-      <time class="event-date" datetime="2026-10-08">
-        <span class="event-day">8</span>
-        <span class="event-month">Oct</span>
-      </time>
-      <div class="event-body">
-        <p class="event-kicker">Next session</p>
-        <h3>SIR epidemic model in Python</h3>
-        <p>Build a compartmental model from scratch. Vary R₀ and watch
-           the outbreak curve change shape.</p>
-        <p class="event-meta">Wednesday · 3:30–5:00 PM · Room 214 · Workshop</p>
-        <p class="event-notes">Bring a laptop if you have one — we have spares.</p>
+    {%- if upcoming.size == 0 -%}
+
+      <p>No sessions scheduled right now. Check back soon, or
+         <a href="{{ '/join.html' | relative_url }}">join the mailing list</a>
+         to hear first.</p>
+
+    {%- else -%}
+
+      {%- assign featured = upcoming | first -%}
+      {%- assign rest = upcoming | shift -%}
+
+      <article class="event event--featured">
+        <time class="event-date" datetime="{{ featured.date | date: '%Y-%m-%d' }}">
+          <span class="event-day">{{ featured.date | date: '%-d' }}</span>
+          <span class="event-month">{{ featured.date | date: '%b' }}</span>
+        </time>
+        <div class="event-body">
+          <p class="event-kicker">Next session</p>
+          <h3>{{ featured.title }}</h3>
+          <p>{{ featured.summary }}</p>
+          <p class="event-meta">
+            {{ featured.time | default: '3:30–5:00 PM' }} ·
+            {{ featured.location | default: 'Room 214' }}
+            {%- if featured.type %} · {{ featured.type }}{% endif %}
+          </p>
+          {%- if featured.notes -%}
+            <p class="event-notes">{{ featured.notes }}</p>
+          {%- endif -%}
+        </div>
+      </article>
+
+      {%- if rest.size > 0 -%}
+        <div class="event-list">
+          {%- for event in rest -%}
+            <article class="event">
+              <time class="event-date" datetime="{{ event.date | date: '%Y-%m-%d' }}">
+                <span class="event-day">{{ event.date | date: '%-d' }}</span>
+                <span class="event-month">{{ event.date | date: '%b' }}</span>
+              </time>
+              <div class="event-body">
+                <h3>{{ event.title }}</h3>
+                <p>{{ event.summary }}</p>
+                <p class="event-meta">
+                  {{ event.time | default: '3:30–5:00 PM' }} ·
+                  {{ event.location | default: 'Room 214' }}
+                  {%- if event.type %} · {{ event.type }}{% endif %}
+                </p>
+              </div>
+            </article>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+    {%- endif -%}
+  </section>
+
+  {%- if past.size > 0 -%}
+    <section class="panel panel--past">
+      <h2>Past sessions</h2>
+
+      <div class="event-list">
+        {%- for event in past -%}
+          <article class="event event--past">
+            <time class="event-date" datetime="{{ event.date | date: '%Y-%m-%d' }}">
+              <span class="event-day">{{ event.date | date: '%-d' }}</span>
+              <span class="event-month">{{ event.date | date: '%b' }}</span>
+            </time>
+            <div class="event-body">
+              <h3>{{ event.title }}</h3>
+              {%- if event.summary -%}<p>{{ event.summary }}</p>{%- endif -%}
+            </div>
+          </article>
+        {%- endfor -%}
       </div>
-    </article>
-
-    <div class="event-list">
-
-      <article class="event">
-        <time class="event-date" datetime="2026-10-15">
-          <span class="event-day">15</span>
-          <span class="event-month">Oct</span>
-        </time>
-        <div class="event-body">
-          <h3>Monte Carlo: estimating π and beyond</h3>
-          <p>Random numbers as a computational tool. We'll start with a
-             dartboard and end with a problem that has no closed form.</p>
-          <p class="event-meta">Wednesday · 3:30–5:00 PM · Room 214 · Workshop</p>
-        </div>
-      </article>
-
-      <article class="event">
-        <time class="event-date" datetime="2026-10-22">
-          <span class="event-day">22</span>
-          <span class="event-month">Oct</span>
-        </time>
-        <div class="event-body">
-          <h3>Traffic flow with cellular automata</h3>
-          <p>The Nagel–Schreckenberg model. Why does a jam appear out of
-             nowhere on an empty road?</p>
-          <p class="event-meta">Wednesday · 3:30–5:00 PM · Room 214 · Workshop</p>
-        </div>
-      </article>
-
-      <article class="event">
-        <time class="event-date" datetime="2026-10-29">
-          <span class="event-day">29</span>
-          <span class="event-month">Oct</span>
-        </time>
-        <div class="event-body">
-          <h3>Project night — bring your own model</h3>
-          <p>No agenda. Work on whatever you're building, ask for help, or
-             pair up with someone else.</p>
-          <p class="event-meta">Wednesday · 3:30–5:00 PM · Room 214 · Open session</p>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="panel panel--past">
-    <h2>Past sessions</h2>
-
-    <div class="event-list">
-
-      <article class="event event--past">
-        <time class="event-date" datetime="2026-10-01">
-          <span class="event-day">1</span>
-          <span class="event-month">Oct</span>
-        </time>
-        <div class="event-body">
-          <h3>Intro to simulation + setup night</h3>
-          <p>Got Python running, wrote a random walk, argued about seed
-             values.</p>
-        </div>
-      </article>
-
-    </div>
-  </section>
+    </section>
+  {%- endif -%}
 
 </div>
