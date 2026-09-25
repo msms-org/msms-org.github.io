@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="MSMS">
+  <rect width="24" height="24" rx="4" fill="#0B0F14"/>
+
+  <!-- body: left + right faces merged -->
+  <path d="M3 7 L12 11.5 L21 7 L21 16 L12 20.5 L3 16 Z" fill="#4ADE80"/>
+
+  <!-- top face, lighter -->
+  <path d="M12 2.5 L21 7 L12 11.5 L3 7 Z" fill="#86EFAC"/>
+
+  <!-- MS on left face (skewed to that plane) -->
+  <g transform="matrix(0.7, 0.35, 0, 1.05, 3.65, 8)" fill="#0B0F14">
+    <!-- M -->
+    <rect x="0" y="0" width="1" height="1"/>
+    <rect x="4" y="0" width="1" height="1"/>
+    <rect x="0" y="1" width="1" height="1"/>
+    <rect x="1" y="1" width="1" height="1"/>
+    <rect x="3" y="1" width="1" height="1"/>
+    <rect x="4" y="1" width="1" height="1"/>
+    <rect x="0" y="2" width="1" height="1"/>
+    <rect x="2" y="2" width="1" height="1"/>
+    <rect x="4" y="2" width="1" height="1"/>
+    <rect x="0" y="3" width="1" height="1"/>
+    <rect x="4" y="3" width="1" height="1"/>
+    <rect x="0" y="4" width="1" height="1"/>
+    <rect x="4" y="4" width="1" height="1"/>
+    <!-- S -->
+    <rect x="6" y="0" width="1" height="1"/>
+    <rect x="7" y="0" width="1" height="1"/>
+    <rect x="8" y="0" width="1" height="1"/>
+    <rect x="9" y="0" width="1" height="1"/>
+    <rect x="10" y="0" width="1" height="1"/>
+    <rect x="6" y="1" width="1" height="1"/>
+    <rect x="6" y="2" width="1" height="1"/>
+    <rect x="7" y="2" width="1" height="1"/>
+    <rect x="8" y="2" width="1" height="1"/>
+    <rect x="9" y="2" width="1" height="1"/>
+    <rect x="10" y="2" width="1" height="1"/>
+    <rect x="10" y="3" width="1" height="1"/>
+    <rect x="6" y="4" width="1" height="1"/>
+    <rect x="7" y="4" width="1" height="1"/>
+    <rect x="8" y="4" width="1" height="1"/>
+    <rect x="9" y="4" width="1" height="1"/>
+    <rect x="10" y="4" width="1" height="1"/>
+  </g>
+
+  <!-- MS on right face (opposite skew) -->
+  <g transform="matrix(0.7, -0.35, 0, 1.05, 12.65, 13)" fill="#0B0F14">
+    <!-- M -->
+    <rect x="0" y="0" width="1" height="1"/>
+    <rect x="4" y="0" width="1" height="1"/>
+    <rect x="0" y="1" width="1" height="1"/>
+    <rect x="1" y="1" width="1" height="1"/>
+    <rect x="3" y="1" width="1" height="1"/>
+    <rect x="4" y="1" width="1" height="1"/>
+    <rect x="0" y="2" width="1" height="1"/>
+    <rect x="2" y="2" width="1" height="1"/>
+    <rect x="4" y="2" width="1" height="1"/>
+    <rect x="0" y="3" width="1" height="1"/>
+    <rect x="4" y="3" width="1" height="1"/>
+    <rect x="0" y="4" width="1" height="1"/>
+    <rect x="4" y="4" width="1" height="1"/>
+    <!-- S -->
+    <rect x="6" y="0" width="1" height="1"/>
+    <rect x="7" y="0" width="1" height="1"/>
+    <rect x="8" y="0" width="1" height="1"/>
+    <rect x="9" y="0" width="1" height="1"/>
+    <rect x="10" y="0" width="1" height="1"/>
+    <rect x="6" y="1" width="1" height="1"/>
+    <rect x="6" y="2" width="1" height="1"/>
+    <rect x="7" y="2" width="1" height="1"/>
+    <rect x="8" y="2" width="1" height="1"/>
+    <rect x="9" y="2" width="1" height="1"/>
+    <rect x="10" y="2" width="1" height="1"/>
+    <rect x="10" y="3" width="1" height="1"/>
+    <rect x="6" y="4" width="1" height="1"/>
+    <rect x="7" y="4" width="1" height="1"/>
+    <rect x="8" y="4" width="1" height="1"/>
+    <rect x="9" y="4" width="1" height="1"/>
+    <rect x="10" y="4" width="1" height="1"/>
+  </g>
+
+  <!-- M silhouette highlight: BL → L → C → R → BR -->
+  <path d="M3 16 L3 7 L12 11.5 L21 7 L21 16"
+        fill="none" stroke="#FBBF24" stroke-width="0.7"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

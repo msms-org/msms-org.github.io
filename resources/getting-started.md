@@ -10,44 +10,77 @@ description: How to install Python, learn the basics, and set up an editor — t
 
 # Getting started
 
-You don't need to know how to code to join. You don't need to finish
-any of this before turning up. This is just the fastest path from
-"I have a laptop" to "I can write a for-loop."
+Everything you need to take your first step with MSMS.
 
 ## The short version
 
-Install Python, install an editor, work through enough of the official
+Install Python install an editor, work through enough of the official
 tutorial to be comfortable with variables, loops, and functions.
 That's it. Everything else you'll pick up by building.
 
-## Install Python
+## What do I need to get started?
 
-The official installer is at [python.org/downloads](https://www.python.org/downloads/).
-Pick the latest stable version for your operating system and let it
-add Python to PATH.
+### Hardware
 
-If you've never written code before, the [official tutorial](https://docs.python.org/3/tutorial/)
-walks through syntax, data structures, and functions. It's dry but
-complete. For something gentler, Al Sweigart's [Automate the Boring Stuff](https://automatetheboringstuff.com/)
-is free online and teaches Python by having you build small useful things.
+A laptop or computer is useful for hands-on projects, but you don't need to own one to join MSMS.
+If you don't have access to a computer, you can still join MSMS. We'll do our best to make activities accessible, and we'll let you know when a project requires access to a computer.
 
-For an editor, [VS Code](https://code.visualstudio.com/) is what most of
-us use. Free, works on any OS, and has excellent Python support.
+### Software
 
-## What to install next
+You don't need to install everything before joining. Different projects use different tools. We'll tell you what a project requires when you start it.
 
-Once Python is running, install these as you need them. You don't need
-all four on day one — most people start with NumPy and add the others
-when a project calls for them.
+We **strongly recommend** **Linux** or **Windows Subsystem for Linux (WSL)** for technical projects. Learn more [here]({{'resources/linux' | relative_url}}).
 
-- **[NumPy](https://numpy.org/)** — arrays and numerical operations.
-  The foundation of almost every simulation you'll write.
-- **[Matplotlib](https://matplotlib.org/)** — plotting. You'll use this
-  constantly to see what your model is actually doing.
-- **[SciPy](https://scipy.org/)** — scientific computing: integration,
-  optimisation, signal processing, statistics.
-- **[Mesa](https://mesa.readthedocs.io/)** — agent-based modelling in
-  Python. For projects that are about individuals rather than aggregates.
+Most technical projects may use:
+
+- **Git** - for version control and collaboration
+- **Github** - sharing code, managing projects, and collaborating
+- **Python** - modelling, simulation, data analysis, and experimentation
+- **A code editor** - such as VS Code, Neovim, Emacs, or another editor you prefer
+- **A terminal** - for running programs and development tools
+- **scientific Python libraries** - such as NumPy, SciPy, and Matplotlib
+- **C/C++ and CMake** - for projects that are better suited to C/C++ or use C/C++ as a part of the learning experience
+
+## What should I learn first?
+
+There isn't one right place to start. Choose something that interests you and build from there.
+
+### Interested in programming?
+
+Start with Python and learn the basics by making small programs.
+
+### Interested in mathematical modelling?
+
+Start with a real-world system, describe it mathematically, and experiment with what your model predicts.
+
+### Interested in simulation?
+
+Start by exploring a simple existing simulation and changing its rules to see what happens.
+
+### Already know how how to program?
+
+Try one of our projects, modify it, or propose an idea of your own.
+
+### Want to learn C++?
+
+Go for it. C++ is useful for many MSMS projects and can be a great way to learn programming, computational thinking, and how software works at a deeper level.
+
+## Stuck?
+
+That's part of the process. Ask another member, discuss it with a mentor, check the project documentation, or bring the problem to MSMS. Learning how to investigate a problem is part of what we do.
+
+## Getting Started Checklist
+
+- [ ] Join MSMS — submit the membership application form
+- [ ] Choose your development environment — Linux, WSL, or macOS
+- [ ] Set up access to a laptop or computer
+- [ ] Install Git
+- [ ] Create a GitHub account
+- [ ] Choose a code editor
+- [ ] Choose something to learn — Python, C++, modelling, simulation, or something else
+- [ ] Explore an MSMS project
+- [ ] Find something you want to build
+- [ ] Ask questions and start learning
 
 ## Next
 
