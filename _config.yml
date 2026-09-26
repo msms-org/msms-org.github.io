@@ -1,6 +1,6 @@
 title: MSMS
 description: Maliyadeva Simulation & Modelling Society — Maliyadeva College, Kurunegala
-
+timezone: Asia/Colombo
 # Leave this empty for a user site (username.github.io).
 # Set to "/repo-name" if hosting at username.github.io/repo-name.
 baseurl: ""

@@ -57,4 +57,4 @@ for name in "${DOCS[@]}"; do
     -o "documents/${name}-body.html"
 done
 
-echo "done. documents/*-body.html regenerated."cho "done. documents/*-body.html regenerated."
+echo "done. documents/*-body.html regenerated."

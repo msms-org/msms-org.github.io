@@ -8,14 +8,14 @@ description: Upcoming and past sessions from the Maliyadeva Simulation and Model
   This template sorts by date and splits into upcoming vs. past.
 {%- endcomment -%}
 
-{%- assign today = site.time | date: "%s" | plus: 0 -%}
+{%- assign today = site.time | date: "%Y-%m-%d" -%}
 {%- assign sorted = site.data.events | sort: "date" -%}
 
 {%- assign upcoming = "" | split: "" -%}
 {%- assign past = "" | split: "" -%}
 {%- for event in sorted -%}
-  {%- assign ts = event.date | date: "%s" | plus: 0 -%}
-  {%- if ts >= today -%}
+  {%- assign ev_date = event.date | date: "%Y-%m-%d" -%}
+  {%- if ev_date >= today -%}
     {%- assign upcoming = upcoming | push: event -%}
   {%- else -%}
     {%- assign past = past | push: event -%}
