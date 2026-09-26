@@ -1,4 +1,3 @@
-
 \documentclass[a4paper]{article}
 
 % ==============================================================================
@@ -15,10 +14,10 @@
 % ==============================================================================
 \usepackage[
     a4paper,
-    top=1in,
-    bottom=1in,
-    left=1in,
-    right=1in,
+    top=0.9in,
+    bottom=0.9in,
+    left=0.9in,
+    right=0.9in,
     headheight=14pt
 ]{geometry}
 
@@ -27,61 +26,34 @@
 % ==============================================================================
 \usepackage{setspace}
 \usepackage{parskip}
-\setstretch{1.08}
+\setstretch{1.05}
 
 % ==============================================================================
 % SECTION & HEADING FORMATTING
 % ==============================================================================
 \usepackage{titlesec}
-\setcounter{tocdepth}{2}
 
-% --- Section level (used for "Section N.") -------------------------------------
 \titleformat{\section}
-    {\normalfont\Large\bfseries}
-    {}
-    {0pt}
+    {\normalfont\large\bfseries}
+    {\thesection.}
+    {0.6em}
     {}
 
 \titlespacing*{\section}
     {0pt}
-    {3.0ex plus 1ex minus .2ex}
-    {1.5ex plus .2ex}
+    {2.2ex plus .6ex minus .2ex}
+    {0.9ex plus .2ex}
 
-% --- Subsection level (used for "N.N") -----------------------------------------
 \titleformat{\subsection}
-    {\normalfont\large\bfseries}
+    {\normalfont\normalsize\bfseries}
     {}
     {0pt}
     {}
 
 \titlespacing*{\subsection}
     {0pt}
-    {2.5ex plus .7ex minus .2ex}
-    {1.2ex plus .2ex}
-
-% --- Subsubsection level (used for "N.N.N") ------------------------------------
-\titleformat{\subsubsection}
-    {\normalfont\normalsize\bfseries}
-    {}
-    {0pt}
-    {}
-
-\titlespacing*{\subsubsection}
-    {0pt}
-    {2ex plus .5ex minus .2ex}
-    {0.8ex plus .2ex}
-
-% --- Paragraph headings --------------------------------------------------------
-\titleformat{\paragraph}[runin]
-    {\normalfont\normalsize\bfseries}
-    {}
-    {0pt}
-    {}
-
-\titlespacing*{\paragraph}
-    {0pt}
-    {1.2ex plus .3ex minus .1ex}
-    {0.7em}
+    {1.5ex plus .4ex minus .2ex}
+    {0.6ex plus .2ex}
 
 % ==============================================================================
 % HEADERS & FOOTERS
@@ -109,9 +81,9 @@
 % ==============================================================================
 \usepackage{enumitem}
 \setlist{
-    topsep=0.5em,
+    topsep=0.4em,
     partopsep=0pt,
-    itemsep=0.25em,
+    itemsep=0.2em,
     parsep=0pt
 }
 \setlist[enumerate]{leftmargin=2em}
@@ -133,283 +105,146 @@
 \urlstyle{same}
 
 % ==============================================================================
-% TABLE OF CONTENTS
-% ==============================================================================
-\usepackage{tocloft}
-\setlength{\cftbeforesecskip}{0.35em}
-\setlength{\cftbeforesubsecskip}{0.1em}
-
-% ==============================================================================
 % TYPOGRAPHIC DETAILS
 % ==============================================================================
 \clubpenalty=10000
 \widowpenalty=10000
-\usepackage{needspace}
 
+% ==============================================================================
+% DOCUMENT
+% ==============================================================================
 
 \begin{document}
+
 \begin{center}
-    \vspace{-1.5cm}
-    {\LARGE\bfseries CODE OF CONDUCT}\\[0.6em]
-    {\large Maliyadeva Simulation and Modelling Society (MSMS)}\\[0.4em]
+    {\Large\bfseries CODE OF CONDUCT}\\[0.5em]
+    {\large Maliyadeva Simulation and Modelling Society (MSMS)}\\[0.3em]
     {\normalsize Maliyadeva College}
 \end{center}
-\tableofcontents
+
+\vspace{1em}
 
 % ==============================================================================
-\section*{Section 1. Purpose, Scope and Governing Principles}
-\addcontentsline{toc}{section}{Section 1. Purpose, Scope and Governing Principles}
+\section{Purpose and Scope}
+% ==============================================================================
 
-\paragraph{1.1 Purpose}
+This Code of Conduct sets out how members and officers of the Maliyadeva
+Simulation and Modelling Society (MSMS) are expected to behave. It exists
+to keep the Society a respectful, safe, and honest place to learn and work.
 
-This Code of Conduct establishes the standards of conduct expected of
-members and officers of the Maliyadeva Simulation and Modelling Society
-(MSMS). It is intended to maintain a respectful, safe, scientifically
-rigorous, and collaborative environment in which members can learn,
-work, and contribute effectively.
+It applies to all members and officers, and to anyone taking part in a
+Society activity, project, competition, or event. It covers conduct at
+meetings, events, projects, competitions, external activities, and on
+Society accounts, platforms, and repositories.
 
-\paragraph{1.2 Application}
+This Code does not replace College rules or the law. Members remain
+subject to Maliyadeva College requirements at all times, and College
+rules and procedures take priority where they apply.
 
-This Code applies to all members and officers of the Society and, where
-applicable, to any person participating in a Society activity, project,
-competition, or other undertaking.
+% ==============================================================================
+\section{Expected Conduct}
+% ==============================================================================
 
-It applies to conduct occurring in connection with the Society,
-including at Society meetings, events, projects, competitions,
-programmes, external engagements, and on Society accounts, platforms,
-repositories, or other digital resources.
-
-\paragraph{1.3 Relationship with College Rules and Applicable Law}
-
-This Code does not replace or supersede the rules of Maliyadeva College
-or applicable law. Members remain subject to College requirements at
-all times, and nothing in this Code limits the authority or disciplinary
-jurisdiction of the College.
-
-Where a matter is governed by College requirements, the applicable
-College rules and procedures shall prevail.
-
-\paragraph{1.4 Governing Principles}
-
-Members and officers shall conduct themselves in accordance with the
-following principles:
+Members and officers are expected to:
 
 \begin{enumerate}
-  \item \textbf{Respect and dignity.} Treat others with respect and
-    dignity.
-  \item \textbf{Integrity and honesty.} Act honestly and maintain
-    academic and technical integrity.
-  \item \textbf{Responsibility.} Fulfil commitments, take responsibility
-    for one's conduct, and use reasonable care in Society activities.
-  \item \textbf{Fairness.} Treat others fairly and without unreasonable
+  \item \textbf{Be respectful.} Treat members, officers, teachers, guests,
+    partners, and participants with respect and dignity, and communicate
+    constructively.
+  \item \textbf{Be honest.} Act with integrity in all Society work, and
+    represent data, results, code, sources, and contributions accurately.
+  \item \textbf{Be responsible.} Fulfil commitments, follow instructions and
+    approved project or competition requirements, and take reasonable care
+    in Society activities.
+  \item \textbf{Be fair.} Treat others fairly and without unreasonable
     discrimination.
-  \item \textbf{Safety.} Act with reasonable care for the safety and
-    well-being of oneself and others.
-  \item \textbf{Responsible use of resources.} Use Society property,
-    funds, information, and digital resources responsibly and for their
-    intended purposes.
-  \item \textbf{Accountability.} Comply with applicable Society
-    procedures, decisions, and College requirements.
+  \item \textbf{Be safe.} Follow safety requirements and use College
+    premises, Society equipment, and other resources with reasonable care.
+  \item \textbf{Use resources properly.} Use Society funds, property,
+    information, accounts, and digital resources only for their intended
+    purposes.
+  \item \textbf{Represent the Society properly.} If authorised to speak for
+    the Society, do so accurately, respectfully, and only within the scope
+    of that authority.
+  \item \textbf{Protect access.} Keep Society credentials and accounts
+    secure, and report lost access or security concerns to the appropriate
+    officer promptly.
 \end{enumerate}
 
 % ==============================================================================
-\section*{Section 2. Expected Conduct}
-\addcontentsline{toc}{section}{Section 2. Expected Conduct}
+\section{Prohibited Conduct}
+% ==============================================================================
 
-Members and officers are expected to conduct themselves responsibly in
-all matters connected with the Society. In particular, they shall:
+The following conduct is prohibited. A breach may be dealt with under
+Article X of the Bylaws and, where relevant, referred to the College.
 
-\paragraph{2.1 Respectful Conduct}
+\begin{enumerate}
+  \item \textbf{Dishonesty.} Fraud, deception, plagiarism, presenting
+    AI-generated work as one's own without disclosure where required, or
+    fabricating or falsifying data, results, code, or documentation.
+  \item \textbf{Academic, technical, or competition misconduct.}
+  \item \textbf{Misuse of Society property or funds.} Using Society funds,
+    property, or resources for personal benefit; removing, lending,
+    damaging, or disposing of Society property without permission; or any
+    financial irregularity prohibited by the Bylaws.
+  \item \textbf{Misuse of the Society's name or identity.} Using the
+    Society's name, logo, identity, or accounts without authorisation, or
+    implying endorsement or partnership without Executive Committee
+    approval.
+  \item \textbf{Unauthorised representation.} Speaking or committing on
+    behalf of the Society without authority, or exceeding the authority
+    delegated to an office.
+  \item \textbf{Misuse of information or accounts.} Accessing, using,
+    disclosing, or keeping confidential information, personal data, or
+    Society records without authorisation; sharing passwords or account
+    access with unauthorised persons; or deleting, altering, or removing
+    Society data or records without permission.
+  \item \textbf{Serious disruption.} Seriously disrupting or obstructing
+    Society meetings, activities, projects, or procedures.
+  \item \textbf{Interference or retaliation.} Interfering with a complaint
+    or disciplinary matter, or retaliating against anyone who raises a
+    concern or takes part in a process under this Code or the Bylaws.
+  \item \textbf{Serious misconduct.} Any other conduct that seriously
+    undermines the purposes, safety, or integrity of the Society.
+    Ordinary disagreement, good-faith criticism, or honest mistake is not
+    a breach of this item.
+\end{enumerate}
 
-Treat other members, officers, teachers, guests, partners, and
-participants with respect and dignity, and communicate in a
-constructive and professional manner.
-
-\paragraph{2.2 Responsible Participation}
-
-Participate responsibly in Society activities, projects, competitions,
-and meetings; fulfil commitments they undertake; follow applicable
-instructions and procedures; comply with approved project or
-competition requirements and applicable technical standards; obtain
-approval for material changes where required; and contribute to a
-cooperative working environment.
-
-\paragraph{2.3 Safety and Proper Use of Facilities}
-
-Comply with applicable safety requirements and use College premises,
-Society facilities, equipment, and other resources with reasonable care
-and for their intended purposes.
-
-\paragraph{2.4 Responsible Digital Conduct}
-
-Use Society accounts, repositories, communication platforms, shared
-documents, and other digital resources responsibly; protect
-credentials and access; and promptly report security concerns,
-suspected breaches, or loss of access to the appropriate officer.
-
-\paragraph{2.5 Academic and Technical Integrity}
-
-Carry out Society work honestly and responsibly; accurately represent
-data, results, code, sources, and contributions; submit work that the
-member can explain and defend; and disclose the use of AI tools where
-required by the Society, a project, or a competition.
-
-\paragraph{2.6 Responsible Representation}
-
-Members authorised to represent the Society shall communicate
-accurately, respectfully, and within the scope of their authority, and
-shall report relevant external communications as required by the
-Bylaws.
+Matters that fall under College disciplinary authority are handled by the
+College. The Society shall refer such matters to the appropriate College
+authority through the Teacher-in-Charge and shall cooperate with any
+College process. Where necessary, the Society may take reasonable
+protective measures while a College process is ongoing.
 
 % ==============================================================================
-\section*{Section 3. Prohibited Conduct}
-\addcontentsline{toc}{section}{Section 3. Prohibited Conduct}
+\section{Reporting and Cooperation}
+% ==============================================================================
 
-The conduct described in this Section is prohibited. A breach may be
-addressed under the disciplinary procedures of the Bylaws and, where
-applicable, referred to the College.
+Concerns about a possible breach of this Code shall be reported to the
+Teacher-in-Charge (TIC) in accordance with Article X of the Bylaws.
 
-\paragraph{3.1 Conduct Reserved to the College}
+Concerns should be raised in good faith. A concern that is not
+established does not, by itself, breach this Code.
 
-Conduct that is subject to disciplinary regulation by the College
-shall remain governed by the applicable College requirements. The
-Society shall not establish, apply, or maintain a separate or
-inconsistent standard for matters reserved to the College.
+Members shall cooperate honestly with any legitimate inquiry or
+disciplinary process under the Bylaws. Information about a concern,
+complaint, or inquiry shall be kept confidential as far as is reasonably
+practicable and consistent with the Bylaws, College requirements, and the
+law.
 
-Where conduct falling within the College's disciplinary authority
-comes to the attention of the Executive Committee, the matter shall be
-referred to the appropriate College authority in accordance with the
-Bylaws, and the Society shall cooperate with any College inquiry or
-procedure.
-
-Nothing in this Section limits the authority of the Society to take
-action within its own authority under the Bylaws, or to take
-reasonable interim protective measures to protect members, Society
-property, or the proper conduct of Society activities pending the
-outcome of a College procedure. Such interim measures shall not
-constitute a disciplinary sanction unless authorised as such under the
-Bylaws.
-
-\paragraph{3.2 Dishonesty and Misconduct}
-
-Members shall not:
-\begin{enumerate}
-  \item engage in dishonesty, fraud, or deception in any Society
-    matter;
-  \item present the work of another person as their own, or present
-    AI-generated work as their own without disclosure as required by
-    Section 2.5;
-  \item fabricate, falsify, or misrepresent data, results, code, or
-    documentation; or
-  \item engage in academic, technical, or competition misconduct.
-\end{enumerate}
-
-\paragraph{3.3 Misuse of Society Property, Funds, or Resources}
-
-Members shall not:
-\begin{enumerate}
-  \item use Society funds, property, or resources for personal
-    benefit or private purposes;
-  \item remove, transfer, lend, dispose of, or damage Society property
-    without authorization;
-  \item misuse the Society's name, logo, identity, or accounts; or
-  \item commit, conceal, or facilitate any financial irregularity
-    prohibited by the Bylaws or the Financial Regulations.
-\end{enumerate}
-
-\paragraph{3.4 Unauthorised Representation and Misuse of Authority}
-
-Members shall not:
-\begin{enumerate}
-  \item represent the Society externally, or hold themselves out as
-    acting for the Society, without authorization;
-  \item make statements or commitments on behalf of the Society that
-    have not been authorised;
-  \item exercise authority delegated to them beyond the scope and
-    limits of that delegation; or
-  \item purport to bind the Society, the College, or any affiliated
-    body without authority.
-\end{enumerate}
-
-\paragraph{3.5 Misuse of Confidential Information, Data, or Digital Resources}
-
-Members shall not:
-\begin{enumerate}
-  \item access, use, disclose, or retain confidential information,
-    personal data, or Society records without authorization;
-  \item share credentials, access tokens, or account access with any
-    person not authorized to hold them;
-  \item alter, destroy, conceal, or remove Society data, records, or
-    digital assets without authorization; or
-  \item use Society digital resources in a manner that risks the
-    security, integrity, or continuity of the Society's systems.
-\end{enumerate}
-
-\paragraph{3.6 Serious Disruption}
-
-Members shall not seriously disrupt, obstruct, or interfere with
-Society activities, meetings, projects, or procedures.
-
-\paragraph{3.7 Interference with Complaints and Investigations}
-
-Members shall not interfere with, obstruct, or improperly influence a
-complaint, investigation, or disciplinary proceeding under the Bylaws.
-
-\paragraph{3.8 General Standard}
-
-A member shall not intentionally or recklessly engage in conduct that,
-in a serious and material manner, undermines the purposes, safety,
-integrity, or lawful operation of the Society where the conduct is not
-otherwise addressed by this Section. Ordinary disagreement, good-faith
-criticism, or inadvertent error shall not, by itself, constitute a
-breach of this provision.
+No one shall retaliate against a person who raises a concern, provides
+information, or takes part in such a process.
 
 % ==============================================================================
-\section*{Section 4. Reporting and Cooperation}
-\addcontentsline{toc}{section}{Section 4. Reporting and Cooperation}
-
-\paragraph{4.1 Reporting Concerns}
-
-Concerns regarding alleged violations of this Code of Conduct shall be
-reported in accordance with the disciplinary and complaint procedures
-established by Article X of the Bylaws.
-
-\paragraph{4.2 Good Faith}
-
-Concerns should be raised in good faith. A concern that is later found
-not to be established does not, by itself, constitute a breach of this
-Code.
-
-\paragraph{4.3 Cooperation}
-
-Members shall cooperate honestly with any legitimate inquiry,
-complaint, investigation, or disciplinary proceeding under the Bylaws.
-
-\paragraph{4.4 No Retaliation}
-
-No person shall retaliate against a person who raises a concern,
-provides information, participates in an investigation, or otherwise
-exercises a right under this Code or the Bylaws.
-
-\paragraph{4.5 Confidentiality}
-
-Information relating to a concern, complaint, or investigation shall
-be treated confidentially to the extent reasonably practicable and
-consistent with the Bylaws, College requirements, and applicable law.
-
+\section{Enforcement}
 % ==============================================================================
-\section*{Section 5. Enforcement and Interpretation}
-\addcontentsline{toc}{section}{Section 5. Enforcement and Interpretation}
 
-Breaches of this Code shall be dealt with in accordance with the
-disciplinary procedures established by the Bylaws.
+Breaches of this Code shall be handled under the disciplinary procedures
+in Article X of the Bylaws.
 
-Nothing in this Code limits the authority or disciplinary jurisdiction
-of Maliyadeva College or the application of applicable law.
-
-Where any provision of this Code conflicts with the Constitution, the
-Bylaws, College requirements, or applicable law, the higher-ranking
-instrument shall prevail, and the conflicting provision shall be void
-to the extent of the conflict.
+Nothing in this Code limits the authority or disciplinary jurisdiction of
+Maliyadeva College or the application of the law. Where this Code
+conflicts with the Constitution, the Bylaws, College requirements, or the
+law, the higher-ranking instrument prevails.
 
 \end{document}
