@@ -71,16 +71,17 @@ That's part of the process. Ask another member, discuss it with a mentor, check 
 
 ## Getting Started Checklist
 
-- [ ] Join MSMS — submit the membership application form
-- [ ] Choose your development environment — Linux, WSL, or macOS
-- [ ] Set up access to a laptop or computer
-- [ ] Install Git
-- [ ] Create a GitHub account
-- [ ] Choose a code editor
-- [ ] Choose something to learn — Python, C++, modelling, simulation, or something else
-- [ ] Explore an MSMS project
-- [ ] Find something you want to build
-- [ ] Ask questions and start learning
+- Join MSMS — submit the membership application form
+- Choose your development environment — Linux, WSL, or macOS
+- Set up access to a laptop or computer
+- Install Git
+- Create a GitHub account
+- Choose a code editor
+- Choose something to learn — Python, C++, modelling, simulation, or something else
+- Explore an MSMS project
+- Find something you want to build
+- Ask questions and start learning
+{: .checklist }
 
 ## Next
 

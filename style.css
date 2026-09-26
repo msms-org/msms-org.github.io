@@ -84,7 +84,9 @@
 
   --serif:
     "IBM Plex Serif",
-    Georgia, "Iowan Old Style", serif;--maxw: 980px;
+    Georgia, "Iowan Old Style", serif;
+
+  --maxw: 980px;
   --radius: 6px;
   --ease: cubic-bezier(0.2, 0.65, 0.3, 1);
 }
@@ -766,6 +768,11 @@ textarea:focus-visible {
 
 /* ============================================================
    FORMS
+   ------------------------------------------------------------
+   All form-control styling is scoped to the .form container so
+   it doesn't leak into markdown-rendered checkboxes inside
+   .prose. Standalone inputs (e.g. GFM task lists) are handled
+   in the PROSE section below.
    ============================================================ */
 
 .form {
@@ -777,13 +784,15 @@ textarea:focus-visible {
 
 .field { display: grid; gap: 0.45rem; }
 
-label {
+.form label {
   color: var(--fg-soft);
   font-size: 0.86rem;
   font-weight: 600;
 }
 
-input, select, textarea {
+.form input,
+.form select,
+.form textarea {
   width: 100%;
   padding: 0.72rem 0.8rem;
 
@@ -803,13 +812,18 @@ input, select, textarea {
     box-shadow 0.2s var(--ease);
 }
 
-textarea { min-height: 120px; resize: vertical; }
+.form textarea { min-height: 120px; resize: vertical; }
 
-input::placeholder, textarea::placeholder { color: var(--faint); }
+.form input::placeholder,
+.form textarea::placeholder { color: var(--faint); }
 
-input:hover, select:hover, textarea:hover { border-color: var(--muted); }
+.form input:hover,
+.form select:hover,
+.form textarea:hover { border-color: var(--muted); }
 
-input:focus, select:focus, textarea:focus {
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
   outline: none;
   background: var(--surface-raised);
   border-color: var(--sim4-bright);
@@ -1791,6 +1805,7 @@ main > .wrap > hr {
   --doc-rule: var(--border);
 
   max-width: var(--doc-width);
+  margin-inline: auto;
   padding-top: clamp(3.5rem, 9vw, 6rem);
   padding-bottom: 5rem;
 }
@@ -1969,6 +1984,50 @@ main > .wrap > hr {
 
 .prose ol ol ol {
   list-style-type: lower-roman;
+}
+
+/* ------------------------------------------------------------
+   Checklist — plain list with a drawn box marker.
+
+   Deliberately NOT a GFM task list. Kramdown renders those as
+   <input type="checkbox" disabled>, and a disabled native input
+   is a pain to style consistently across browsers and is not
+   interactive anyway. Instead: a plain <ul> tagged with
+   {: .checklist } in the markdown, with the checkbox square
+   drawn by ::before. Text wraps normally under the label
+   because the box is positioned absolutely, not in flow.
+
+   To add an item, just write a normal bullet:
+     - Something to do
+   ------------------------------------------------------------ */
+
+.prose ul.checklist {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0 1.75rem;
+}
+
+.prose ul.checklist li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.55rem;
+}
+
+.prose ul.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 1em;
+  height: 1em;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 3px;
+  background: var(--surface);
+  box-sizing: border-box;
+}
+
+.prose ul.checklist li::marker {
+  content: none;
 }
 
 /* Definition lists — pandoc renders \begin{description} as <dl> */
@@ -2264,4 +2323,3 @@ main > .wrap > hr {
 .error-page .cta {
   margin-bottom: 3.5rem;
 }
-

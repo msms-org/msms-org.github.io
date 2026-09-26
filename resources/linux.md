@@ -1,6 +1,4 @@
-
 ---
-
 layout: prose
 title: Why We Recommend Linux
 description: The reasoning behind our recommendation of a Linux-friendly environment for technical projects
