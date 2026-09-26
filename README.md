@@ -280,6 +280,7 @@ The layout for a resource card in the index:
 Pick `panel--simN` to match the topic family — `sim3` for learning
 content, `sim2` for logistics, `sim1` for technical reference,
 `sim4` for identity-adjacent material
+
 ---
 
 ### Add a new page
